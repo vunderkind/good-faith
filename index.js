@@ -1,5 +1,8 @@
 const express = require('express');
 const server = express();
+import db from './dbconfig/dbconfig.js';
+
+
 
 
 const users = [{

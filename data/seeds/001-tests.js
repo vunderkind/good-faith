@@ -1,13 +1,13 @@
 
-exports.seed = function(knex) {
+exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('beneficiaries').truncate()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('beneficiaries').insert([
+        {firstName: 'Koku', lastName: 'Baboni', phone: '09044657677', isWhatsApp: 'True', email: 'kokubaboni@gmail.com', context: 'I need help, as quickly as possible too!', paymentLink: 'https://helpkokubaboni.com', location: 'Lagos, Nigeria', socialMedia: 'kokz4luv', isVerified: 'False'},
+        {firstName: 'Koku', lastName: 'Baboni', phone: '09044657677', isWhatsApp: 'True', email: 'kokubaboni@gmail.com', context: 'I need help, as quickly as possible too!', paymentLink: 'https://helpkokubaboni.com', location: 'Lagos, Nigeria', socialMedia: 'kokz4luv', isVerified: 'False'},
+        {firstName: 'Koku', lastName: 'Baboni', phone: '09044657677', isWhatsApp: 'True', email: 'kokubaboni@gmail.com', context: 'I need help, as quickly as possible too!', paymentLink: 'https://helpkokubaboni.com', location: 'Lagos, Nigeria', socialMedia: 'kokz4luv', isVerified: 'False'},
       ]);
     });
 };
