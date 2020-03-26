@@ -1,13 +1,10 @@
-const express = require('express'); // import the express package
+const express = require('express');
 
-const server = express(); // creates the server
+const beneficiaryRouter = require('./model/beneficiary-router');
 
-// handle requests to the root of the api, the / route
-server.get('/', (req, res) => {
-  res.send('Hello from Express');
-});
+const server = express();
 
-// watch for connections on port 5000
-server.listen(5000, () =>
-  console.log('Server running on http://localhost:5000')
-);
+server.use(express.json());
+server.use('/api/people', beneficiaryRouter);
+
+module.exports = server;

@@ -1,43 +1,7 @@
-const express = require('express');
-const server = express();
-import db from './dbconfig/dbconfig.js';
+const server = require('./server.js');
 
+const PORT = process.env.PORT || 5000;
 
-
-
-const users = [{
-    firstName: 'James',
-      lastName: 'Carmichael',
-      phone: '+234903964271',
-      isWhatsapp: 'True',
-      email: 'jamescarmichael@gmail.com',
-      context: 'Gentleman seeking funds',
-      paymentLink: 'https://pleaseaddfunds.me',
-      Location: 'Lagos, Nigeria',
-      socialMedia: 'https://twitter.com/jamescarmichael',
-      industry: 1,
-      isVerified: 'True',
-  },
-  {
-    firstName: 'Junaid',
-      lastName: 'Vindiesel',
-      phone: '+234903964271',
-      isWhatsapp: 'True',
-      email: 'jamescarmichael@gmail.com',
-      context: 'Gentleman seeking funds',
-      paymentLink: 'https://pleaseaddfunds.me',
-      Location: 'Lagos, Nigeria',
-      socialMedia: 'https://twitter.com/jamescarmichael',
-      industry: 1,
-      isVerified: 'True',
-  }];
-
-server.get('/', (req, res) => {
-  res.send('This is the good faith API');
+server.listen(PORT, () => {
+  console.log(`Good Faith is Listening on port ${PORT}...`);
 });
-
-server.get('/users', (req, res) => {
-    res.status(200).json(users)
-  });
-
-server.listen(8000, () => console.log('API running in good faith on port 8000'));
