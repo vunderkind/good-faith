@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 
 .App {
-  text-align: left;
+  text-align: justify;
   padding-top: 10vh;
   padding-left: 10vw;
   color: #fff;
