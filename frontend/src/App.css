@@ -1,16 +1,33 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
+
 .App {
-  text-align: center;
-  padding-top: 10%;
+  text-align: left;
+  padding-top: 10vh;
+  padding-left: 10vw;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: larger;
+}
+
+h1 {
+  color: rgb(94, 255, 94);
+}
+
+h2 {
+  font-size: medium;
 }
 
 .Button {
-    background-color: #6edf57;
+    background-color: black;
+    color: white;
     border: 1px #DADADA solid;
     padding: 10px 20px;
     margin: 10px;
-    border-radius: 2px;
+    border-radius: 9px;
     font-weight: bold;
-    font-size: 9pt;
+    font-size: large;
     outline: none;
 }
 
@@ -20,13 +37,13 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: wobble 5s ease-in-out infinite alternate;
   }
 }
 
@@ -45,11 +62,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes wobble {
+  33% {
+    transform: rotate(5deg);
   }
-  to {
-    transform: rotate(360deg);
+  66% {
+    transform: rotate(-5deg);
   }
 }
