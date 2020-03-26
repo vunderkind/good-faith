@@ -14,27 +14,35 @@
 
 h1 {
   color: rgb(94, 255, 94);
+  text-align: left;
 }
 
 h2 {
-  font-size: medium;
+  font-size: 16px;
 }
 
 .Button {
-    background-color: black;
-    color: white;
-    border: 1px #DADADA solid;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 9px;
+    background-color: rgb(29, 26, 43);
+    color: rgb(94, 255, 94);
+    border: 1.5px rgb(94, 255, 94) solid;
+    padding: 10px 15px;
+    margin: 5px;
+    margin-top: 30px;
+    border-radius: 7px;
     font-weight: bold;
     font-size: large;
     outline: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.Button:hover {
+  color: rgb(255, 218, 72);
+  border: 1.5px rgb(255, 218, 72) solid;
 }
 
 .Button2 {
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: rgb(29, 26, 43);
+  color: rgb(255, 169, 103);
 }
 
 .App-logo {
