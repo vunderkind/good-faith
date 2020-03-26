@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     if (info) {
       res.json(info);
     } else {
-      res.status(404).json({ message: 'Could not find beneficiary info for this particular person.' })
+      res.status(404).json({ message: `This person with id ${id} does not exist in the database. They could be walking down the street and we wouldn't recognize them. Sorry to this man.` })
     }
   })
   .catch(err => {
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
     if (info) {
       Beneficiaries.update(changes, id)
       .then(updatedinfo => {
-        res.json(updatedinfo);
+        res.json({message: `Successfully updated!`});
       });
     } else {
       res.status(404).json({ message: 'Could not find info with given id' });

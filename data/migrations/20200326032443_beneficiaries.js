@@ -4,13 +4,13 @@ exports.up = function(knex, Promise) {
         tbl.increments();
         tbl.text('firstName', 128).notNullable();
         tbl.text('lastName', 128).notNullable();
-        tbl.float('phone', 128).notNullable();
+        tbl.float('phone', 128).unique().notNullable();
         tbl.boolean('isWhatsApp').notNullable();
-        tbl.string('email');
+        tbl.string('email').unique();
         tbl.string('context').notNullable();
-        tbl.string('paymentLink').notNullable();
+        tbl.string('paymentLink').unique().notNullable();
         tbl.string('location').notNullable();
-        tbl.string('socialMedia');
+        tbl.string('socialMedia').unique();
         tbl.boolean('isVerified');
         tbl.timestamp('created_at').defaultTo(knex.fn.now());
 
