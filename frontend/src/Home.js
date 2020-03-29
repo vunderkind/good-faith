@@ -39,8 +39,8 @@ function Home() {
     {users && users.map ((user) => (
       <div index={user.id}>
       <h2 style={{fontSize:'15px'}}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
+      <hr/>
       <h3>"{user.context}"</h3>
-      <h3>{user.paymentLink}</h3>
       <CopyToClipboard text={user.paymentLink}
           onCopy={() => setState({copied: true})}>
           <button>Tap to copy account details</button>

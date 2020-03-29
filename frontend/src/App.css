@@ -83,8 +83,11 @@ span {
   width: 80vw;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 10px;
-  background-color: white;
+  padding: 15px 20px;
+  background-color: rgb(255, 249, 208);
+  -webkit-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
+  -moz-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
+  box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
 }
 
 .header {
