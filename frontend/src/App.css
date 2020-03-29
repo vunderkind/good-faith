@@ -1,19 +1,20 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .App {
   text-align: justify;
   padding-top: 20px;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  color: #fff;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
 }
 
 h1 {
-  color: rgb(94, 255, 94);
+  color: rgb(181, 2, 2);
   text-align: left;
   line-height: 1em;
 }
@@ -22,11 +23,19 @@ h2 {
   font-size: 16px;
 }
 
+h3 {
+  font-size: 15px;
+}
+
+span {
+  color: rgb(35, 87, 143);
+}
+
 .Button {
     background-color: rgb(29, 26, 43);
     color: rgb(94, 255, 94);
     border: 1.5px rgb(94, 255, 94) solid;
-    padding: 10px 15px;
+    padding: 9px 7px;
     margin: 5px;
     margin-top: 30px;
     border-radius: 7px;
@@ -65,11 +74,33 @@ h2 {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(46, 46, 46);
+}
+
+.userCard {
+  font-family: 'Playfair Display', serif;
+  border-radius: 7px;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+.header {
+  font-family: 'Roboto Mono', monospace;
+  width: 85vw;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Title {
+  display: flex;
+
 }
 
 @keyframes wobble {
