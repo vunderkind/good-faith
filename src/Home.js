@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Loader from 'react-loader-spinner'
 import './App.css';
 import kindness from './kindness.png';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
@@ -36,6 +37,12 @@ function Home() {
       <h2 style={{color:'gray', fontStyle:'italic'}}>Here are ten randomly-generated individuals who you can help</h2>
     </div>
     <div>
+    {!users? <Loader className="Loader"
+         type="BallTriangle"
+         color="blue"
+         height={40}
+         width={40}
+      />: null}
     {users && users.map ((user) => (
       <div index={user.id} className="userCard">
       <h2 style={{fontSize:'15px'}}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>

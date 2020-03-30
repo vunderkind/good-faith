@@ -94,6 +94,14 @@ span {
   text-align: justify;
 }
 
+.Loader {
+display: block;
+width: 100%;
+color: black;
+margin-left: 40vw;
+margin-top: 20vh;
+}
+
 .header {
   font-family: 'Roboto Mono', monospace;
   width: 85vw;
