@@ -6,11 +6,13 @@ import './App.css'
 
 const App = () => {
     return (
-        <>
+        <div>
         <Router>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to="/users">Users</Link>
+            <div className="Linq">
+            <Link className="Link" id="home" to='/'>Home</Link>
+            <Link className="Link" to='/about'>About</Link>
+            <Link className="Link" to="/users">Users</Link>
+            </div>
 
         <Switch>
         <Route exact path="/">
@@ -21,7 +23,7 @@ const App = () => {
           </Route>
         </Switch>
         </Router>
-        </>
+        </div>
     )
 }
 

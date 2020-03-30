@@ -1,6 +1,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .App {
@@ -13,14 +14,32 @@
   font-size: larger;
 }
 
+.Linq {
+  padding: 40px 40px;
+  padding-bottom: 0px;
+  width: 100vw;
+}
+.Link {
+  padding-right: 30px;
+  font-weight: bold;
+  color: rgb(203, 245, 185);
+  background-color: black;
+
+}
+
+#home {
+  color: rgb(255, 255, 255);
+
+}
 .App2 {
   text-align: left;
   padding-top: 20px;
   padding-left: 8vw;
   padding-right: 8vw;
   color: rgb(33, 33, 33);
-  font-family: 'Helvetica';
+  font-family: 'Roboto', sans-serif;
   font-size: larger;
+  padding-bottom:50px;
 }
 
 .App2 h2 {
@@ -41,7 +60,8 @@ h3 {
 }
 
 span {
-  color: rgb(35, 87, 143);
+  color: rgb(49, 92, 58);
+  font-weight: bold;
 }
 
 .Button {
@@ -91,8 +111,9 @@ span {
 }
 
 .userCard {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto', sans-serif;
   border-radius: 7px;
+
   width: 80vw;
   margin: 0 auto;
   margin-top: 20px;
@@ -104,7 +125,7 @@ span {
 }
 
 .userCard h3 {
-  text-align: justify;
+  text-align: left;
 }
 
 .Loader {
