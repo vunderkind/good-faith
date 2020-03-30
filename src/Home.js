@@ -64,12 +64,16 @@ return emptyArray
       <h2 style={{fontSize:'15px'}}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
       <hr/>
       <h3>"{user.context}"</h3>
-      <CopyToClipboard text={user.paymentLink}
+      <details>
+        <summary><span>Tap for account info</span></summary>
+        {user.accountName} <br/> <strong>{user.accountNumber}</strong> <br/> {user.bankName}
+      </details>
+      {/* <CopyToClipboard text={user.paymentLink}
           onCopy={() => setState({copied: true})}>
           <button>Tap to copy account details</button>
         </CopyToClipboard>
         {state.copied ? <span style={{color: 'blue', fontSize: '12px'}}>Copied!</span> : null}
-        <br/>
+        <br/> */}
       </div>
     ))}
     </div>
