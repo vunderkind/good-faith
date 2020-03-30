@@ -35,9 +35,9 @@ function Home() {
     <h2>A list of people who have been economically affected by the COVID-19 virus and are currently without pay.</h2>
       <h2 style={{color:'gray', fontStyle:'italic'}}>Here are ten randomly-generated individuals who you can help</h2>
     </div>
-    <div className="userCard">
+    <div>
     {users && users.map ((user) => (
-      <div index={user.id}>
+      <div index={user.id} className="userCard">
       <h2 style={{fontSize:'15px'}}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
       <hr/>
       <h3>"{user.context}"</h3>
@@ -46,6 +46,7 @@ function Home() {
           <button>Tap to copy account details</button>
         </CopyToClipboard>
         {state.copied ? <span style={{color: 'blue', fontSize: '12px'}}>Copied!</span> : null}
+        <br/>
       </div>
     ))}
     </div>
