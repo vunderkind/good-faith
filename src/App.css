@@ -90,6 +90,10 @@ span {
   box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
 }
 
+.userCard h3 {
+  text-align: justify;
+}
+
 .header {
   font-family: 'Roboto Mono', monospace;
   width: 85vw;

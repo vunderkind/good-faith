@@ -14,7 +14,7 @@ function Home() {
     .then(data => setusers(data))
     setvisible(!visible)
   }
-  
+
   if(visible) {
     return (
       <div className="App">
