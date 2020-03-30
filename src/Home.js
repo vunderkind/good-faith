@@ -12,8 +12,24 @@ function Home() {
   function fetchusers() {
     fetch(apiURL)
     .then(response => response.json())
-    .then(data => setusers(data))
-    setvisible(!visible)
+    .then(data => makeRandom(data))
+    .then(final =>setusers(final))
+    setvisible(!visible) //using this to manage the state of the results page
+  }
+
+  function makeRandom(info) {
+    var arr = [];
+    let emptyArray = []
+  while(arr.length < 10){
+    var r = Math.floor(Math.random() * info.length);
+    if(arr.indexOf(r) === -1) {
+      arr.push(r);
+      emptyArray.push(info[r])
+
+    }
+}
+return emptyArray
+
   }
 
   if(visible) {
@@ -39,11 +55,11 @@ function Home() {
     <div>
     {!users? <Loader className="Loader"
          type="BallTriangle"
-         color="blue"
+         color="#008000"
          height={40}
          width={40}
       />: null}
-    {users && users.map ((user) => (
+    {users &&  users.map ((user) => (
       <div index={user.id} className="userCard">
       <h2 style={{fontSize:'15px'}}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
       <hr/>
