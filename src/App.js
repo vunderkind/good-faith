@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Home from './Home'
 import About from './About'
+import './App.css'
 
 const App = () => {
     return (
@@ -10,16 +11,16 @@ const App = () => {
             <Link to='/'>Home</Link>
             <Link to='/about'>About</Link>
             <Link to="/users">Users</Link>
-        </Router>
 
         <Switch>
-        <Route path="/">
+        <Route exact path="/">
             <Home />
           </Route>
           <Route path="/about">
             <About />
           </Route>
         </Switch>
+        </Router>
         </>
     )
 }
