@@ -92,7 +92,8 @@ return emptyArray
         <div className="Report">
         <a 
           href={ getAccountErrorEmailHref(user) }
-          target="_blank"
+          // eslint-disable-next-line react/jsx-no-target-blank
+          target="_blank" 
           rel="noopenner noreferrer"
         >
           Report problem with details
