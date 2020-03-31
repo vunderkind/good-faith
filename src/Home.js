@@ -81,6 +81,7 @@ return emptyArray
         <summary><span style={{fontSize:'17px'}}>Tap for account info</span></summary>
         <strong>{user.accountNumber}</strong> <br/> {user.bankName}
         <br/>
+        <div className="interact">
         <CopyToClipboard text={user.accountNumber}
           onCopy={() => (setState({copied: true, message:'Copied!'}), setTimeout(()=>{setState({message: 'Copy account number'})},500))
           }
@@ -88,13 +89,16 @@ return emptyArray
           <button key ={user.id} id={user.id}className="Clipboard">{state.message}</button>
         </CopyToClipboard>
         &nbsp;
+        <div className="Report">
         <a 
           href={ getAccountErrorEmailHref(user) }
           target="_blank"
           rel="noopenner noreferrer"
         >
-          Problem with account?
+          Report problem with details
         </a>
+        </div>
+        </div>
       </details>
       </div>
     ))}

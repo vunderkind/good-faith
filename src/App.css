@@ -50,6 +50,15 @@
   line-height: 1.4;
 }
 
+.Report a {
+color: rgb(184, 44, 44);
+line-height: 1;
+
+}
+.interact {
+  display: flex;
+  justify-content: space-between;
+}
 .App3 {
   width: 90vw;
   margin: 0 auto;
@@ -242,5 +251,11 @@ margin-top: 10vh;
   .Link {
     margin: 0;
     background: black;
+  }
+
+  .interact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
