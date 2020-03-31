@@ -7,12 +7,12 @@ import './App.css'
 
 const App = () => {
     return (
-        <div className="App">
+        <div>
         <Router>
             <div className="Linq">
             <Link className="Link" id="home" to='/'>Home</Link>
             <Link className="Link" to='/about'>About</Link>
-            <Link className="Link" to="/needhelp">Need help</Link>
+            <Link className="Link" to='/needhelp'>Need help</Link>
             </div>
 
         <Switch>

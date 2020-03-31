@@ -5,26 +5,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 .App {
-  text-align: justify;
+  text-align: center;
   padding-top: 60px;
   padding-left: 3vw;
   padding-right: 3vw;
   color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
+  margin-bottom: 10vh;
+}
+
+.App h2{
+  text-align: justify;
 }
 
 .Linq {
   padding: 40px 40px;
   /* padding-left: 8vw; */
   padding-bottom: 0px;
-  width: 100vw;
+  text-align: center;
 }
 .Link {
-  padding-right: 30px;
+  padding: 5px 30px;
   font-weight: bold;
   color: rgb(203, 245, 185);
-  background-color: black;
+  background-color: rgb(233, 102, 102);
 
 }
 
@@ -35,25 +40,52 @@
 .App2 {
   text-align: left;
   padding-top: 20px;
-  padding-left: 8vw;
-  padding-right: 8vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  font-size: larger;
   padding-bottom:50px;
+  font-size: 12px;
+  margin-bottom: 10vh;
+  line-height: 1.4;
+}
+
+.App3 {
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: rgb(33, 33, 33);
+  font-family: 'Roboto', sans-serif;
+  padding-bottom:50px;
+  font-size: 12px;
+  margin-bottom: 10vh;
+  line-height: 1.4;
+}
+
+.App3 h1 {
+  color: rgb(13, 73, 147);
+  text-align: left;
+  line-height: 1;
+  font-size: 40px;
 }
 
 .App2 h2 {
-  font-size: 21px
+  font-size: 19px
+}
+
+.App2 h1{
+  font-size: 29px
 }
 h1 {
-  color: rgb(181, 2, 2);
-  text-align: left;
-  line-height: 1em;
+  color: rgb(13, 73, 147);
+  text-align: center;
+  line-height: 1;
+  font-size: 45px;
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h3 {
@@ -114,6 +146,7 @@ span {
 .userCard {
   font-family: 'Roboto', sans-serif;
   border-radius: 7px;
+  text-align: left;
 
   width: 80vw;
   margin: 0 auto;
@@ -139,9 +172,10 @@ margin-top: 20vh;
 
 .header {
   font-family: 'Roboto Mono', monospace;
-  width: 85vw;
+  width: 80vw;
   margin: 0 auto;
   margin-top: 10px;
+  text-align: center;
 }
 
 .App-link {
@@ -150,6 +184,7 @@ margin-top: 20vh;
 
 .Title {
   display: flex;
+  justify-content: center;
 
 }
 
@@ -165,12 +200,14 @@ margin-top: 20vh;
 @media only screen and (max-width: 600px){
   .App{
     padding-top: 10px;
+    margin: 0 8vw;
   }
   .Linq{
     padding: 0
   }
 
   .Link {
-    margin: 0
+    margin: 0;
+    background: black;
   }
 }
