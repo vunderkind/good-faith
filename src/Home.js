@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import Loader from 'react-loader-spinner'
 import './App.css';
-// import kindness from './kindness.png'
 import NeedHelp from './NeedHelp'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import CopyToClipboard from 'react-copy-to-clipboard'
 
 function Home() {
+  const [state, setState] = useState({copied: false, message: 'Copy account number'})
   const [visible, setvisible] = useState(true)
   const [users, setusers] = useState(null);
   const apiURL = 'https://cors-anywhere.herokuapp.com/https://good-faith.herokuapp.com/api/people'
@@ -73,8 +74,15 @@ return emptyArray
       <hr/>
       <h3>"{user.context}"</h3>
       <details>
-        <summary><span>Tap for account info</span></summary>
-        {user.accountName} <br/> <strong>{user.accountNumber}</strong> <br/> {user.bankName}
+        <summary><span style={{fontSize:'17px'}}>Tap for account info</span></summary>
+        <strong>{user.accountNumber}</strong> <br/> {user.bankName}
+        <br/>
+        <CopyToClipboard text={user.accountNumber}
+          onCopy={() => (setState({copied: true, message:'Copied!'}), setTimeout(()=>{setState({message: 'Copy account number'})},500))
+          }
+          >
+          <button key ={user.id} id={user.id}className="Clipboard">{state.message}</button>
+        </CopyToClipboard>
       </details>
       </div>
     ))}

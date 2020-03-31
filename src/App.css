@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
@@ -74,8 +74,28 @@
   font-size: 19px
 }
 
+.Clipboard{
+  background-color: rgb(29, 26, 43);
+    color: rgb(94, 255, 94);
+    border: 1.5px rgb(94, 255, 94) solid;
+    padding: 9px 7px;
+    /* margin: 5px; */
+    margin-top: 3px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
 .App2 h1{
   font-size: 29px
+}
+
+.userCard span {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-size: 20px;
 }
 h1 {
   color: rgb(13, 73, 147);
@@ -145,29 +165,35 @@ span {
 
 .userCard {
   font-family: 'Roboto', sans-serif;
-  border-radius: 7px;
+  border-radius: 2px;
   text-align: left;
-
+  border: 1px solid black;
   width: 80vw;
   margin: 0 auto;
-  margin-top: 20px;
-  padding: 15px 20px;
-  background-color: rgb(255, 249, 208);
+  margin-top: 40px;
+  padding: 30px 20px;
+  background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
   -moz-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
   box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
 }
 
+details {
+  font-family: 'Oswald', sans-serif;
+  color: #3c3c3c;
+  line-height: 2;
+  font-size: 18px;
+}
+
 .userCard h3 {
   text-align: left;
+  line-height: 1.7;
 }
 
 .Loader {
-display: block;
-width: 100%;
-color: black;
-margin-left: 40vw;
-margin-top: 20vh;
+display: flex;
+justify-content: center;
+margin-top: 10vh;
 }
 
 .header {
