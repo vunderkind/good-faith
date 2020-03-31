@@ -6,9 +6,9 @@
 
 .App {
   text-align: justify;
-  padding-top: 20px;
-  padding-left: 8vw;
-  padding-right: 8vw;
+  padding-top: 60px;
+  padding-left: 3vw;
+  padding-right: 3vw;
   color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
@@ -16,6 +16,7 @@
 
 .Linq {
   padding: 40px 40px;
+  /* padding-left: 8vw; */
   padding-bottom: 0px;
   width: 100vw;
 }
@@ -158,5 +159,18 @@ margin-top: 20vh;
   }
   66% {
     transform: rotate(-5deg);
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .App{
+    padding-top: 10px;
+  }
+  .Linq{
+    padding: 0
+  }
+
+  .Link {
+    margin: 0
   }
 }
