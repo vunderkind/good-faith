@@ -12,7 +12,7 @@
   color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
-  margin-bottom: 10vh;
+  padding-bottom: 30vh;
 }
 
 .App h2{
@@ -51,16 +51,23 @@
 }
 
 .App3 {
+  width: 90vw;
+  margin: 0 auto;
   text-align: left;
   padding-top: 20px;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
   padding-bottom:50px;
   font-size: 12px;
   margin-bottom: 10vh;
   line-height: 1.4;
+}
+
+#hp {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .App3 h1 {

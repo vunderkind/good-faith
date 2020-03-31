@@ -44,7 +44,7 @@ return emptyArray
         <Link to="/needhelp"><button className="Button Button2">I need help</button></Link>
 
       <Switch>
-        <Route path="/needhelp">
+        <Route path="/needhelp" id="hp">
           <NeedHelp />
         </Route>
       </Switch>
