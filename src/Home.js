@@ -33,6 +33,10 @@ return emptyArray
 
   }
 
+  function getAccountErrorEmailHref(user) {
+    return "mailto:thevunderkind@gmail.com?subject=Problem with account on angelsamong.us&body=Hello, I had a problem transferring to " + user.accountNumber + ", " + user.bankName
+  }
+
   if(visible) {
     return (
       <div className="App">
@@ -83,6 +87,14 @@ return emptyArray
           >
           <button key ={user.id} id={user.id}className="Clipboard">{state.message}</button>
         </CopyToClipboard>
+        &nbsp;
+        <a 
+          href={ getAccountErrorEmailHref(user) }
+          target="_blank"
+          rel="noopenner noreferrer"
+        >
+          Problem with account?
+        </a>
       </details>
       </div>
     ))}
