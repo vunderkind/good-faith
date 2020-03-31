@@ -6,6 +6,9 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import CopyToClipboard from 'react-copy-to-clipboard'
 
 function Home() {
+  function getAccountErrorEmailHref(user) {
+    return ("mailto:thevunderkind@gmail.com?subject=Problem with account on angelsamong.us&body=Hello, I had a problem transferring to " + user.accountNumber + ", " + user.bankName)
+  }
   const [state, setState] = useState({copied: false, message: 'Copy account number'})
   const [visible, setvisible] = useState(true)
   const [users, setusers] = useState(null);
@@ -33,9 +36,6 @@ return emptyArray
 
   }
 
-  function getAccountErrorEmailHref(user) {
-    return "mailto:thevunderkind@gmail.com?subject=Problem with account on angelsamong.us&body=Hello, I had a problem transferring to " + user.accountNumber + ", " + user.bankName
-  }
 
   if(visible) {
     return (
@@ -83,6 +83,7 @@ return emptyArray
         <br/>
         <div className="interact">
         <CopyToClipboard text={user.accountNumber}
+          
           onCopy={() => (setState({copied: true, message:'Copied!'}), setTimeout(()=>{setState({message: 'Copy account number'})},500))
           }
           >
@@ -91,10 +92,8 @@ return emptyArray
         &nbsp;
         <div className="Report">
         <a 
+          target="blank" rel="noopenner noreferrer"
           href={ getAccountErrorEmailHref(user) }
-          // eslint-disable-next-line react/jsx-no-target-blank
-          target="_blank" 
-          rel="noopenner noreferrer"
         >
           Report problem with details
         </a>
