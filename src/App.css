@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import 'https://fonts.googleapis.com/css?family=Raleway:100,600';
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
 body {
     padding-bottom: 4rem;
 }
@@ -14,7 +17,80 @@ body {
   color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
-  padding-bottom: 30vh;
+  padding-bottom: 10rem; 
+}
+
+.Angelcover {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5em;
+  flex-flow: wrap;
+  padding-bottom: 10em; 
+  /* margin-bottom: 3em; */
+}
+.Angels {
+  display: flex;
+  justify-content: center;
+  font-family: "Raleway";
+  flex-flow: wrap;
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  margin-top: 2em;
+  padding: 5px;
+  background: black;
+  color: gray;
+  font-family: 'Raleway';
+  
+}
+
+.Footer h2 {
+  font-size: small;
+  padding-left: 3vw;
+}
+
+
+#Team {
+  font-family: 'Yeseva One', cursive;
+  color: rgb(16, 23, 16);
+}
+
+.Archangels {
+  padding: 20px;
+  width: 15em;
+  border: 1px solid rgb(232, 232, 232);
+  margin: 0;
+  text-align: center;
+  /* margin-top: 5em; */
+}
+
+.Angels :hover {
+  -webkit-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  -moz-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+}
+
+.Archangels img {
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.Archangels h2 {
+  color: rgb(61, 114, 37);
+  font-size: 25px;
+}
+
+.Angels h2 :hover {
+  color: rgb(169, 46, 83);
 }
 
 .App h2 {
@@ -26,6 +102,7 @@ body {
   /* padding-left: 8vw; */
   padding-bottom: 0px;
   text-align: center;
+  line-height: 1;
 }
 
 .Link {
@@ -33,6 +110,7 @@ body {
   font-weight: bold;
   color: rgb(203, 245, 185);
   background-color: rgb(233, 102, 102);
+  line-height: 1;
 }
 
 #home {
@@ -46,7 +124,7 @@ body {
   padding-right: 5vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 10rem; 
   font-size: 12px;
   margin-bottom: 10vh;
   line-height: 1.4;
@@ -71,9 +149,9 @@ body {
   padding-right: 3vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 10rem; 
   font-size: 12px;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
   line-height: 1.4;
 }
 
@@ -279,11 +357,16 @@ details {
     margin: 0 8vw;
   }
   .Linq {
-    padding: 0
+    /* padding: 0 */
+    line-height: 2;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
   }
   .Link {
-    margin: 0;
+    /* margin: 0; */
     background: black;
+    line-height: 1;
   }
   .interact {
     display: flex;
