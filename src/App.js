@@ -16,7 +16,7 @@ const App = () => {
           <Link className="Link" to='/needhelp'>Need help</Link>
         </div>
         <div style={{ textAlign: "center" }}>
-          <h3>Share this with someone who needs it.</h3>
+          <h3>Share 'Angels among us' with your network!</h3>
           <SocialShare
             text={"Share kindness in these COVID-19 times. If you're financially stable during this COVID-19 crisis, consider making a small contribution to people who haven't been as lucky. Use this to get a randomly-generated list of ten people who need your help."}
             url={window.location.href}
