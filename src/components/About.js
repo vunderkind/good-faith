@@ -20,9 +20,6 @@ const About = () => {
             <h1>Other forms of support</h1>
             <h2>If you're a dev looking to add features to make this project better, shoot me an email <a href="mailto:thevunderkind@gmail.com">here</a>. If you want to lend your support as a comms expert to handle social media and/other ways of reaching out to people who need help and donors alike, also send me an email!</h2>
             <br/>
-            <h1>Created by?</h1>
-            <h2>Justin Irabor: <br/> Growth manager at <a href="https://ouredenlife.com">Eden</a>. Writer. Illustrator. Animator. Software engineer. Lives and works in Lagos.</h2>
-
         </div>
     )
 }

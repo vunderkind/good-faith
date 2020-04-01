@@ -12,7 +12,7 @@
   color: rgb(1, 1, 1);
   font-family: 'Roboto Mono', monospace;
   font-size: larger;
-  padding-bottom: 30vh;
+  padding-bottom: 10rem; 
 }
 
 .Angelcover {
@@ -23,6 +23,7 @@
   margin: 0 auto;
   margin-top: 5em;
   flex-flow: wrap;
+  padding-bottom: 10em; 
   /* margin-bottom: 3em; */
 }
 .Angels {
@@ -33,7 +34,7 @@
 }
 
 .Footer {
-  /* position: absolute; */
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 3rem;
@@ -118,7 +119,7 @@
   padding-right: 5vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 10rem; 
   font-size: 12px;
   margin-bottom: 10vh;
   line-height: 1.4;
@@ -143,9 +144,9 @@
   padding-right: 3vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 10rem; 
   font-size: 12px;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
   line-height: 1.4;
 }
 
