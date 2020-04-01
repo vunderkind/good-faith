@@ -35,6 +35,7 @@ function Home() {
 
   return (
     visible ?
+    
       <div className="App">
         {/* <img className="App-logo " src={kindness} alt="kindness"/> */}
         <h1>Angels among us.</h1>
