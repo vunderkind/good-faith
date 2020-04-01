@@ -1,9 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-
 .App {
   text-align: center;
   padding-top: 60px;
@@ -15,7 +13,7 @@
   padding-bottom: 30vh;
 }
 
-.App h2{
+.App h2 {
   text-align: justify;
 }
 
@@ -25,18 +23,18 @@
   padding-bottom: 0px;
   text-align: center;
 }
+
 .Link {
   padding: 5px 30px;
   font-weight: bold;
   color: rgb(203, 245, 185);
   background-color: rgb(233, 102, 102);
-
 }
 
 #home {
   color: rgb(255, 255, 255);
-
 }
+
 .App2 {
   text-align: left;
   padding-top: 20px;
@@ -44,21 +42,22 @@
   padding-right: 5vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom:50px;
+  padding-bottom: 50px;
   font-size: 12px;
   margin-bottom: 10vh;
   line-height: 1.4;
 }
 
 .Report a {
-color: rgb(184, 44, 44);
-line-height: 1;
-
+  color: rgb(184, 44, 44);
+  line-height: 1;
 }
+
 .interact {
   display: flex;
   justify-content: space-between;
 }
+
 .App3 {
   width: 90vw;
   margin: 0 auto;
@@ -68,7 +67,7 @@ line-height: 1;
   padding-right: 3vw;
   color: rgb(33, 33, 33);
   font-family: 'Roboto', sans-serif;
-  padding-bottom:50px;
+  padding-bottom: 50px;
   font-size: 12px;
   margin-bottom: 10vh;
   line-height: 1.4;
@@ -90,21 +89,21 @@ line-height: 1;
   font-size: 19px
 }
 
-.Clipboard{
+.Clipboard {
   background-color: rgb(29, 26, 43);
-    color: rgb(94, 255, 94);
-    border: 1.5px rgb(94, 255, 94) solid;
-    padding: 9px 7px;
-    /* margin: 5px; */
-    margin-top: 3px;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: 15px;
-    outline: none;
-    font-family: 'Roboto Mono', monospace;
+  color: rgb(94, 255, 94);
+  border: 1.5px rgb(94, 255, 94) solid;
+  padding: 9px 7px;
+  /* margin: 5px; */
+  margin-top: 3px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.App2 h1{
+.App2 h1 {
   font-size: 29px
 }
 
@@ -113,6 +112,7 @@ line-height: 1;
   letter-spacing: 1px;
   font-size: 20px;
 }
+
 h1 {
   color: rgb(13, 73, 147);
   text-align: center;
@@ -134,17 +134,17 @@ span {
 }
 
 .Button {
-    background-color: rgb(29, 26, 43);
-    color: rgb(94, 255, 94);
-    border: 1.5px rgb(94, 255, 94) solid;
-    padding: 9px 7px;
-    margin: 5px;
-    margin-top: 30px;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: large;
-    outline: none;
-    font-family: 'Roboto Mono', monospace;
+  background-color: rgb(29, 26, 43);
+  color: rgb(94, 255, 94);
+  border: 1.5px rgb(94, 255, 94) solid;
+  padding: 9px 7px;
+  margin: 5px;
+  margin-top: 30px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .Button:hover {
@@ -189,9 +189,9 @@ span {
   margin-top: 40px;
   padding: 30px 20px;
   background-color: rgb(255, 255, 255);
-  -webkit-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
-  -moz-box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
-  box-shadow: 3px 3px 4px 1px rgba(11,13,26,0.1);
+  -webkit-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  -moz-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
 }
 
 details {
@@ -207,9 +207,9 @@ details {
 }
 
 .Loader {
-display: flex;
-justify-content: center;
-margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
 }
 
 .header {
@@ -227,7 +227,35 @@ margin-top: 10vh;
 .Title {
   display: flex;
   justify-content: center;
+}
 
+.btn {
+  padding: 9px 7px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.social {
+  color: #fff;
+  text-align: center;
+}
+
+.social.facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.social.twitter {
+  background-color: #38A1F3;
+  color: #fff;
+}
+
+.social.whatsapp {
+  background-color: #25D366;
+  color: #fff;
 }
 
 @keyframes wobble {
@@ -239,20 +267,18 @@ margin-top: 10vh;
   }
 }
 
-@media only screen and (max-width: 600px){
-  .App{
+@media only screen and (max-width: 600px) {
+  .App {
     padding-top: 10px;
     margin: 0 8vw;
   }
-  .Linq{
+  .Linq {
     padding: 0
   }
-
   .Link {
     margin: 0;
     background: black;
   }
-
   .interact {
     display: flex;
     flex-direction: column;
