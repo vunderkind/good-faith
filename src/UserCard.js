@@ -19,6 +19,7 @@ function UserCard(props) {
                 <br />
                 <div className="interact">
                     <CopyToClipboard text={user.accountNumber}
+                        // eslint-disable-next-line no-sequences
                         onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
                     >
                         <button key={user.id} id={user.id} className="Clipboard">{state.message}</button>

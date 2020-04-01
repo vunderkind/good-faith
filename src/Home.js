@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Loader from 'react-loader-spinner'
 import './App.css';
-import NeedHelp from './NeedHelp'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+// import NeedHelp from './NeedHelp'
+import { Link } from 'react-router-dom'
 import UserCard from './UserCard';
 
 function Home() {
