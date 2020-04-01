@@ -10,7 +10,6 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <>
     <div>
       <Router>
         <div className="Linq">
@@ -43,10 +42,10 @@ const App = () => {
             <Team />
             </Route>
         </Switch>
+        
+        <Footer />
       </Router>
     </div>
-    <Footer />
-    </>
   )
 }
 
