@@ -1,19 +1,23 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import NeedHelp from './NeedHelp'
-import SocialShare from './SocialShare';
+import Home from './components/Home'
+import About from './components/About'
+import NeedHelp from './components/NeedHelp'
+import SocialShare from './components/SocialShare';
+import Team from './components/Team'
 import './App.css'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
+    <>
     <div>
       <Router>
         <div className="Linq">
           <Link className="Link" id="home" to='/'>Home</Link>
           <Link className="Link" to='/about'>About</Link>
           <Link className="Link" to='/needhelp'>Need help</Link>
+          <Link className="Link" to='/team'>Team</Link>
         </div>
         <div style={{ textAlign: "center" }}>
           <h3>Share 'Angels among us' with your network!</h3>
@@ -35,9 +39,14 @@ const App = () => {
           <Route path="/needhelp">
             <NeedHelp />
           </Route>
+          <Route path='/team'>
+            <Team />
+            </Route>
         </Switch>
       </Router>
     </div>
+    <Footer />
+    </>
   )
 }
 
