@@ -10,43 +10,40 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <>
-    <div>
       <Router>
-        <div className="Linq">
-          <Link className="Link" id="home" to='/'>Home</Link>
-          <Link className="Link" to='/about'>About</Link>
-          <Link className="Link" to='/needhelp'>Need help</Link>
-          <Link className="Link" to='/team'>Team</Link>
-        </div>
-        <div style={{ textAlign: "center" }}>
-          <h3>Share 'Angels among us' with your network!</h3>
-          <SocialShare
-            text="Share kindness in these COVID-19 times. If you're financially stable during this COVID-19 crisis, consider making a small contribution to people who haven't been as lucky. Use this to get a randomly-generated list of ten people who need your help."
-            url="https://angelsamong.us/"
-            tag="AngelsAmongUs"
-          />
-        </div>
+          <div className="Linq">
+            <Link className="Link" id="home" to='/'>Home</Link>
+            <Link className="Link" to='/about'>About</Link>
+            <Link className="Link" to='/needhelp'>Need help</Link>
+            <Link className="Link" to='/team'>Team</Link>
+          </div>
 
+          <div style={{ textAlign: "center" }}>
+            <h3>Share 'Angels among us' with your network!</h3>
+            <SocialShare
+              text={"Share kindness in these COVID-19 times. If you're financially stable during this COVID-19 crisis, consider making a small contribution to people who haven't been as lucky. Use this to get a randomly-generated list of ten people who need your help."}
+              url={window.location.href}
+              tag={"#AngelsAmongUs"}
+            />
+          </div>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/needhelp">
-            <NeedHelp />
-          </Route>
-          <Route path='/team'>
-            <Team />
+          <Switch>
+            <Route exact path="/">
+              <Home />
             </Route>
-        </Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/needhelp">
+              <NeedHelp />
+            </Route>
+            <Route path='/team'>
+              <Team />
+              </Route>
+          </Switch>
+
+          <Footer />
       </Router>
-    </div>
-    <Footer />
-    </>
   )
 }
 

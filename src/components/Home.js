@@ -44,7 +44,7 @@ function Home() {
         <Link to="/needhelp"><button className="Button Button2">I need help</button></Link>
       </div>
     :
-      <div>
+      <div className="App">
         <div className="header">
           <div className="Title">
             <h1 style={{ fontSize: '25px', color: 'green' }}>Angels among us.</h1>
