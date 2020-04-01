@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import NeedHelp from './NeedHelp'
-import SocialShare from './SocialShare';
+import Home from './components/Home'
+import About from './components/About'
+import NeedHelp from './components/NeedHelp'
+import SocialShare from './components/SocialShare';
 import './App.css'
 
 const App = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Loader from 'react-loader-spinner'
-import './App.css';
+import '../App.css';
 // import NeedHelp from './NeedHelp'
 import { Link } from 'react-router-dom'
 import UserCard from './UserCard';
