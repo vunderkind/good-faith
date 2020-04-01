@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+    padding-bottom: 4rem;
+}
+
 .App {
   text-align: center;
   padding-top: 60px;
@@ -236,11 +240,13 @@ details {
   font-size: large;
   outline: none;
   font-family: 'Roboto Mono', monospace;
+  display: inline-block;
 }
 
 .social {
   color: #fff;
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .social.facebook {
