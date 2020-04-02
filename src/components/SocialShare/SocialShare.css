@@ -1,0 +1,25 @@
+.social {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 8px;
+    font-size: 24px;
+    line-height: 0;
+    width: 24px;
+    border-radius: 5px;
+}
+
+.social.facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.social.twitter {
+    background-color: #38A1F3;
+    color: #fff;
+}
+
+.social.whatsapp {
+    background-color: #25D366;
+    color: #fff;
+}

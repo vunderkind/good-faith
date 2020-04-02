@@ -1,0 +1,14 @@
+.Footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 5px;
+    background: black;
+    color: gray;
+}
+
+.Footer h2 {
+    font-size: small;
+    padding-left: 3vw;
+}
