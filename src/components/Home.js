@@ -20,7 +20,7 @@ function Home() {
   function makeRandom(info) {
     var arr = [];
     let emptyArray = []
-    while (arr.length < 10) {
+    while (arr.length < 3) {
       var r = Math.floor(Math.random() * info.length);
       if (arr.indexOf(r) === -1) {
         arr.push(r);
@@ -39,7 +39,7 @@ function Home() {
       <div className="App">
         {/* <img className="App-logo " src={kindness} alt="kindness"/> */}
         <h1>Angels among us.</h1>
-        <h2>'Angels among us' is a simple tool for people with relatively secure financial statuses to help people whose means of livelihood have been affected by the COVID-19 outbreak.<br /><br /> When you click the 'Be an angel' button, you'll get a random list of ten people you can contribute to. Consider sending money to each person on the list (eg. N2,000-N10,000 to each person). This is a great way to ensure we reach as many people as possible, as uniformly as possible.</h2>
+        <h2>'Angels among us' is a simple tool for people with relatively secure financial statuses to help people whose means of livelihood have been affected by the COVID-19 outbreak.<br /><br /> When you click the 'Be an angel' button, you'll get a random list of <span>three</span> people you can contribute to.<br/><br/> Consider sending money to each person on the list (eg. N2,000 to three people is N6,000). This is a great way to ensure we reach as many people as possible, as uniformly as possible.</h2>
         <button className="Button" onClick={fetchusers}>Be an angel</button>
         <Link to="/needhelp"><button className="Button Button2">I need help</button></Link>
       </div>
@@ -50,7 +50,7 @@ function Home() {
             <h1 style={{ fontSize: '25px', color: 'green' }}>Angels among us.</h1>
           </div>
           <h2>A list of people who have been economically affected by the COVID-19 virus and are currently without pay.</h2>
-          <h2 style={{ color: 'gray', fontStyle: 'italic' }}>Here are ten randomly-generated individuals who you can help</h2>
+          <h2 style={{ color: 'gray', fontStyle: 'italic' }}>Here are <span>three</span> randomly-generated individuals who you can help.<br/> If you'd like to donate to more people after your first three, refresh the page.</h2>
         </div>
         <div>
           {!users ? <Loader className="Loader"

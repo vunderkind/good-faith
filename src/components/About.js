@@ -6,7 +6,7 @@ const About = () => {
         <div className="App3">
             <h1>What is this website?</h1>
             <h2>'Angels among us' is a simple tool (heavily inspired by <a href="https://leveler.info">Leveler)</a> for people looking for ways to share some of their income with people who are in dire economic straits because of the COVID-19 pandemic.</h2>
-            <h2>It is a simple database of people who need help, randomly delivered to you ten at a time. You can then copy their account details and make a contribution to their well-being.</h2>
+            <h2>It is a simple database of people who need help, randomly delivered to you <span>three</span> at a time. You can then copy their account details and make a contribution to their well-being.</h2>
             <h2>None of your payments pass through me in any form. You are helping these distressed people directly, without my having to play a middleman's role. I make no profit from this, and I do not collect commissions. I earn nothing from this.</h2>
             <br/>
             <h1>How do I help?</h1>
