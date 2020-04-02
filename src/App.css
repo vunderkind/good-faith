@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import 'https://fonts.googleapis.com/css?family=Raleway:100,600';
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
 body {
@@ -11,7 +11,7 @@ body {
 
 .App {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 40px;
   padding-left: 3vw;
   padding-right: 3vw;
   color: rgb(1, 1, 1);
@@ -34,7 +34,7 @@ body {
 .Angels {
   display: flex;
   justify-content: center;
-  font-family: "Raleway";
+  font-family: 'PT Serif', serif;
   flex-flow: wrap;
 }
 
@@ -47,7 +47,7 @@ body {
   padding: 5px;
   background: black;
   color: gray;
-  font-family: 'Raleway';
+  font-family: 'PT Serif', serif;
   
 }
 
@@ -65,9 +65,9 @@ body {
 .Archangels {
   padding: 20px;
   width: 15em;
-  border: 1px solid rgb(255, 244, 199);
-  background: rgb(255, 255, 216);
-  margin: 0;
+  border: 1px solid rgb(215, 215, 215);
+  background: rgb(255, 255, 255);
+  margin: 2px;
   text-align: center;
   /* margin-top: 5em; */
 }
@@ -98,6 +98,15 @@ body {
   text-align: justify;
 }
 
+.App #verify-paragraph {
+  color: rgb(1, 87, 179);
+  font-size: medium;
+  font-family: "PT Serif";
+  font-weight: bold;
+}
+
+
+
 .Linq {
   padding: 40px 40px;
   /* padding-left: 8vw; */
@@ -116,6 +125,22 @@ body {
 
 #home {
   color: rgb(255, 255, 255);
+}
+
+.FAQ {
+  font-family: 'PT Serif', serif;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.FAQ h2 {
+  font-size: 25px;
+  color: rgb(66, 87, 159);
+}
+
+.FAQ p {
+  font-size: larger;
 }
 
 .App2 {
@@ -142,16 +167,16 @@ body {
 }
 
 .App3 {
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
-  text-align: left;
+  text-align: justify;
   padding-top: 20px;
   padding-left: 3vw;
   padding-right: 3vw;
   color: rgb(33, 33, 33);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Serif', serif;
   padding-bottom: 10rem; 
-  font-size: 12px;
+  font-size: 20px;
   /* margin-bottom: 10vh; */
   line-height: 1.4;
 }

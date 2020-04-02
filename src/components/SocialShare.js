@@ -4,7 +4,7 @@ function SocialShare(props) {
     return (
         <div className="share-btns">
             <a
-                href={"https://www.facebook.com/sharer/sharer.php?u=" + props.url + "&quote=" + encodeURI(props.text) + " #" + props.tag + ""}
+                href={"https://www.facebook.com/sharer/sharer.php?u=" + props.url + "&quote=" + encodeURI(props.text) + " " + props.tag + ""}
                 className="social facebook btn"
                 target="_blank"
                 rel="noopener noreferrer"

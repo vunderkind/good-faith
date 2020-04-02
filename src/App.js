@@ -7,6 +7,7 @@ import SocialShare from './components/SocialShare';
 import Team from './components/Team'
 import './App.css'
 import Footer from './components/Footer'
+import FAQ from './components/FAQ'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <div className="Linq">
             <Link className="Link" id="home" to='/'>Home</Link>
             <Link className="Link" to='/about'>About</Link>
+            <Link className="Link" to='/faq'>FAQ</Link>
             <Link className="Link" to='/needhelp'>Need help</Link>
             <Link className="Link" to='/team'>Team</Link>
           </div>
@@ -33,6 +35,9 @@ const App = () => {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+              <Route path="/faq">
+              <FAQ />
             </Route>
             <Route path="/needhelp">
               <NeedHelp />
