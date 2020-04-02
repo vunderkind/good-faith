@@ -1,12 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Angels among us
 
-## Available Scripts
+['Angels among us'](https://angelsamong.us) is a simple tool for people with relatively secure financial statuses to help people whose means of livelihood have been affected by the COVID-19 outbreak
 
-In the project directory, you can run:
+> Interested in contributing to the project? Please read through the [contributing guide](./contributing.md) to get started
+
+## Setting up your environment
+
+### `npm install`
+
+Install the necessary node modules
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
+This runs the app in the development mode.<br />
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
