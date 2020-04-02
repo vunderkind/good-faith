@@ -1,5 +1,4 @@
 import React from 'react'
-import '../App.css'
 import michael from '../photos/michael.jpg'
 import placeholder from '../photos/placeholder.png'
 import mischief from '../photos/mischief.jpg'

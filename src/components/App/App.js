@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import NeedHelp from './components/NeedHelp'
-import Team from './components/Team'
+import Home from '../Home'
+import About from '../About'
+import NeedHelp from '../NeedHelp'
+import Team from '../Team'
 import './App.css'
-import Footer from './Footer/Footer'
-import FAQ from './components/FAQ'
-import Header from './components/Header'
+import Footer from '../../Footer/Footer'
+import FAQ from '../FAQ'
+import Header from '../Header'
 
 const App = () => {
   return (
