@@ -10,7 +10,7 @@ const About = () => {
             <p>None of your payments pass through me in any form. You are helping these distressed people directly, without my having to play a middleman's role. I make no profit from this, and I do not collect commissions. I earn nothing from this.</p>
             <br/>
             <h1>How do I help?</h1>
-            <p>On the homepage, click the 'Be an angel' button to see a randomly-generated list of 10 people who need help from you. Please send the same amount of money to all of them. This is a great way to ensure that as many people as possible are uniformly reached by kind people like you.</p>
+            <p>On the homepage, click the 'Be an angel' button to see a randomly-generated list of three people who need help from you. Please send the same amount of money to all of them. This is a great way to ensure that as many people as possible are uniformly reached by kind people like you.</p>
             <br/>
             <h1>I need help</h1>
             <p>Click the 'I need help' button on the homepage and let people know just what you need</p>
