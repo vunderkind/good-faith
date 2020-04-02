@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import './UserCard.css'
+import Button from '../utilities/Button/Button';
 
 function UserCard(props) {
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
@@ -22,13 +24,14 @@ function UserCard(props) {
                         // eslint-disable-next-line no-sequences
                         onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
                     >
-                        <button key={user.id} id={user.id} className="Clipboard">{state.message}</button>
+                        <Button type="primary">{state.message}</Button>
                     </CopyToClipboard>
                     &nbsp;
                     <div className="Report">
                         <a
                             target="_blank" rel="noopener noreferrer"
                             href={getAccountErrorEmailHref(user)}
+                            className="red-text"
                         >
                             Report problem with details
                     </a>

@@ -7,7 +7,7 @@ import Team from '../Team'
 import './App.css'
 import Footer from '../../Footer/Footer'
 import FAQ from '../FAQ'
-import Header from '../Header'
+import Header from '../Header/Header'
 
 const App = () => {
   return (

@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import TextCenter from './utilities/TextCenter/TextCenter'
-import SocialShare from './SocialShare/SocialShare';
+import TextCenter from '../utilities/TextCenter/TextCenter'
+import SocialShare from '../SocialShare/SocialShare'
+import './Header.css'
 
 function Header() {
     return (

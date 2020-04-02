@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Roboto-Mono&display=swap');
-
 :root {
   --primary-font: 'Roboto Mono', monospace;
   --secondary-font: 'Roboto Mono', monospace;
@@ -11,25 +10,44 @@
   --accent-color-transparent: rgb(0, 0, 0, 0.81);
   --white: #ffffff;
   --black: #000000;
+  --red: rgb(184, 44, 44);
   --gradient: linear-gradient(to bottom, var(--primary-color) 51%, var(--accent-color) 100%);
   --gradient-transparent: linear-gradient(to bottom, var(--accent-color-transparent) 51%, var(--accent-color-transparent) 100%);
-  --shadow: 1px 1px 2px #000;
+  --shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
 }
 
 body {
-    font-family: var(--secondary-font);
-    padding-bottom: 4rem;
+  font-family: var(--secondary-font);
+  padding-bottom: 4rem;
 }
 
 a:not(.btn) {
-	color: initial;
-	text-decoration: none;
-	border-bottom: 3px solid var(--primary-color);
-	transition: .4s cubic-bezier(0.19, 1, 0.22, 1)
+  color: initial;
+  text-decoration: none;
+  border-bottom: 3px solid var(--primary-color);
+  transition: .4s cubic-bezier(0.19, 1, 0.22, 1)
 }
 
 a:not(.btn):hover {
   color: var(--white);
   padding: 3px;
-	background-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+a.red-text {
+  border-bottom: 3px solid var(--red);
+}
+
+a.red-text:hover {
+  background-color: var(--red);
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
 }
