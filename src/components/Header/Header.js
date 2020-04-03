@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import TextCenter from '../utilities/TextCenter/TextCenter'
 import SocialShare from '../SocialShare/SocialShare'
 import './Header.css'
@@ -8,11 +8,11 @@ function Header() {
     return (
         <Fragment>
             <div className="Linq">
-                <Link className="Link" id="home" to='/'>Home</Link>
-                <Link className="Link" to='/about'>About</Link>
-                <Link className="Link" to='/faq'>FAQ</Link>
-                <Link className="Link" to='/needhelp'>Need help</Link>
-                <Link className="Link" to='/team'>Team</Link>
+                <NavLink exact activeClassName="active" className="Link" id="home" to='/'>Home</NavLink>
+                <NavLink activeClassName="active" className="Link" to='/about'>About</NavLink>
+                <NavLink activeClassName="active" className="Link" to='/faq'>FAQ</NavLink>
+                <NavLink activeClassName="active" className="Link" to='/needhelp'>Need help</NavLink>
+                <NavLink activeClassName="active" className="Link" to='/team'>Team</NavLink>
             </div>
 
             <TextCenter>
