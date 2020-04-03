@@ -12,6 +12,7 @@ import ekene from '../photos/ekene.jpg'
 import juachi from '../photos/juachi.jpg'
 import deji from '../photos/deji.jpg'
 import ore from '../photos/ore.jpeg'
+import maro from '../photos/maro.jpg'
 
 const Team = () => {
     let teamState = [
@@ -102,6 +103,14 @@ const Team = () => {
             role: "Angel",
             description: "Contributed to the source code.",
             photo: deji,
+        },
+        {
+            name: "Akpobi maro",
+            bio: "explore",
+            website: "",
+            role: "Angel",
+            description: "Contributed to the source code.",
+            photo: maro,
         },
 
     ]
