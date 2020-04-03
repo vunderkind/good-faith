@@ -7,6 +7,10 @@
 
 body {
     padding-bottom: 4rem;
+    
+}
+a {
+text-decoration: none;
 }
 
 .App {
@@ -66,8 +70,9 @@ body {
   padding: 20px;
   width: 15em;
   border: 1px solid rgb(215, 215, 215);
+  border-radius: 10px;
   background: rgb(255, 255, 255);
-  margin: 2px;
+  margin: 10px;
   text-align: center;
   /* margin-top: 5em; */
 }
