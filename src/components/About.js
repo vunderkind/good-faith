@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return(
-        <div className="App3">
+        <div className="App">
             <h1>What is this website?</h1>
             <p>'Angels among us' is a simple tool (heavily inspired by <a href="https://leveler.info">Leveler)</a> for people looking for ways to share some of their income with people who are in dire economic straits because of the COVID-19 pandemic.</p>
             <p>It is a simple database of people who need help, randomly delivered to you <span>three</span> at a time. You can then copy their account details and make a contribution to their well-being.</p>
