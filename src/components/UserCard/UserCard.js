@@ -12,29 +12,31 @@ function UserCard(props) {
 
     return (
         <div className="userCard">
-            <h2 style={{ fontSize: '15px' }}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
+            <h2>{user.firstName} {user.lastName}</h2>
+            <small>{user.location}</small>
             <hr />
-            <h3>"{user.context}"</h3>
+            <p><i>"{user.context}"</i></p>
             <details>
                 <summary><span style={{ fontSize: '17px' }}>Tap for account info</span></summary>
                 <strong>{user.accountNumber}</strong> <br /> {user.bankName}
                 <br />
-                <div className="interact">
-                    <CopyToClipboard text={user.accountNumber}
-                        // eslint-disable-next-line no-sequences
-                        onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
-                    >
-                        <Button type="primary">{state.message}</Button>
-                    </CopyToClipboard>
-                    &nbsp;
-                    <div className="Report">
+                <div className="interact row .align-items-center">
+                    <div className="col-50">
+                        <CopyToClipboard text={user.accountNumber}
+                            // eslint-disable-next-line no-sequences
+                            onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
+                        >
+                            <Button type="primary">{state.message}</Button>
+                        </CopyToClipboard>
+                    </div>
+                    <div className="col-50">
                         <a
                             target="_blank" rel="noopener noreferrer"
                             href={getAccountErrorEmailHref(user)}
                             className="red-text"
                         >
                             Report problem with details
-                    </a>
+                        </a>
                     </div>
                 </div>
             </details>

@@ -1,11 +1,11 @@
 .userCard {
     font-family: 'Roboto', sans-serif;
-    border-radius: 2px;
+    border-radius: 10px;
+    border: solid 0.5px var(--grey);
     text-align: left;
-    border: 1px solid black;
     width: 80%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-bottom: 40px;
     padding: 30px 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: var(--shadow);
