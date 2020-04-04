@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+body {
+    padding-bottom: 4rem;
+    
+}
+
+
+.App {
+  text-align: center;
+  padding-top: 40px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  color: rgb(1, 1, 1);
+  font-family: 'Roboto Mono', monospace;
+  font-size: larger;
+  padding-bottom: 10rem; 
+}
+
+.Angelcover {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5em;
+  flex-flow: wrap;
+  padding-bottom: 10em; 
+  /* margin-bottom: 3em; */
+}
+.Angels {
+  display: flex;
+  justify-content: center;
+  font-family: 'PT Serif', serif;
+  flex-flow: wrap;
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  margin-top: 2em;
+  padding: 5px;
+  background: black;
+  color: gray;
+  font-family: 'PT Serif', serif;
+  
+}
+
+.Footer h2 {
+  font-size: small;
+  padding-left: 3vw;
+}
+
+
+#Team {
+  font-family: 'Yeseva One', cursive;
+  color: rgb(16, 23, 16);
+}
+
+.Archangels {
+  padding: 20px;
+  width: 15em;
+  border: 1px solid rgb(215, 215, 215);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  margin: 10px;
+  text-align: center;
+  /* margin-top: 5em; */
+}
+
+.Angels :hover {
+  -webkit-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  -moz-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+}
+
+.Archangels img {
+    /* width: 35%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.Archangels h2 {
+  color: rgb(61, 114, 37);
+  font-size: 25px;
+}
+
+.Angels h2 :hover {
+  color: rgb(169, 46, 83);
+}
+
+.App h2 {
+  text-align: justify;
+}
+
+.App #verify-paragraph {
+  color: rgb(1, 87, 179);
+  font-size: medium;
+  font-family: "PT Serif";
+  font-weight: bold;
+}
+
+
+
+.Linq {
+  padding: 40px 40px;
+  /* padding-left: 8vw; */
+  padding-bottom: 0px;
+  text-align: center;
+  line-height: 1;
+}
+
+.Link {
+  padding: 5px 30px;
+  font-weight: bold;
+  color: rgb(203, 245, 185);
+  background-color: rgb(233, 102, 102);
+  line-height: 1;
+}
+
+#home {
+  color: rgb(255, 255, 255);
+}
+
+.FAQ {
+  font-family: 'PT Serif', serif;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.FAQ h2 {
+  font-size: 25px;
+  color: rgb(66, 87, 159);
+}
+
+.FAQ p {
+  font-size: larger;
+}
+
+.App2 {
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: rgb(33, 33, 33);
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 10rem; 
+  font-size: 12px;
+  margin-bottom: 10vh;
+  line-height: 1.4;
+}
+
+.Report a {
+  color: rgb(184, 44, 44);
+  line-height: 1;
+}
+
+.interact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.App3 {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: justify;
+  padding-top: 20px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  color: rgb(33, 33, 33);
+  font-family: 'PT Serif', serif;
+  padding-bottom: 10rem; 
+  font-size: 20px;
+  /* margin-bottom: 10vh; */
+  line-height: 1.4;
+}
+
+#hp {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.App3 h1 {
+  color: rgb(13, 73, 147);
+  text-align: left;
+  line-height: 1;
+  font-size: 40px;
+}
+
+.App2 h2 {
+  font-size: 19px
+}
+
+.Clipboard {
+  background-color: rgb(29, 26, 43);
+  color: rgb(94, 255, 94);
+  border: 1.5px rgb(94, 255, 94) solid;
+  padding: 9px 7px;
+  /* margin: 5px; */
+  margin-top: 3px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.App2 h1 {
+  font-size: 29px
+}
+
+.userCard span {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+h1 {
+  color: rgb(13, 73, 147);
+  text-align: center;
+  line-height: 1;
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+span {
+  color: rgb(49, 92, 58);
+  font-weight: bold;
+}
+
+.Button {
+  background-color: rgb(29, 26, 43);
+  color: rgb(94, 255, 94);
+  border: 1.5px rgb(94, 255, 94) solid;
+  padding: 9px 7px;
+  margin: 5px;
+  margin-top: 30px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.Button:hover {
+  color: rgb(255, 218, 72);
+  border: 1.5px rgb(255, 218, 72) solid;
+}
+
+.Button2 {
+  background-color: rgb(29, 26, 43);
+  color: rgb(255, 169, 103);
+}
+
+.App-logo {
+  height: 80px;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: wobble 5s ease-in-out infinite alternate;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(46, 46, 46);
+}
+
+.userCard {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 2px;
+  text-align: left;
+  border: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 30px 20px;
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  -moz-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+  box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+}
+
+details {
+  font-family: 'Oswald', sans-serif;
+  color: #3c3c3c;
+  line-height: 2;
+  font-size: 18px;
+}
+
+.userCard h3 {
+  text-align: left;
+  line-height: 1.7;
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.header {
+  font-family: 'Roboto Mono', monospace;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 9px 7px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+  display: inline-block;
+}
+
+.social {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.social.facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.social.twitter {
+  background-color: #38A1F3;
+  color: #fff;
+}
+
+.social.whatsapp {
+  background-color: #25D366;
+  color: #fff;
+}
+
+@keyframes wobble {
+  33% {
+    transform: rotate(5deg);
+  }
+  66% {
+    transform: rotate(-5deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    padding-top: 10px;
+    margin: 0 8vw;
+  }
+  .Linq {
+    /* padding: 0 */
+    line-height: 2;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+  .Link {
+    /* margin: 0; */
+    background: black;
+    line-height: 1;
+  }
+  .interact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
