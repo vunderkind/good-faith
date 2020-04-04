@@ -1,4 +1,6 @@
 .Linq {
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     padding: 10px 0;
     height: 40px;
