@@ -11,6 +11,7 @@
   --white: #ffffff;
   --black: #000000;
   --red: rgb(184, 44, 44);
+  --grey: rgb(97, 94, 94);
   --gradient: linear-gradient(to bottom, var(--primary-color) 51%, var(--accent-color) 100%);
   --gradient-transparent: linear-gradient(to bottom, var(--accent-color-transparent) 51%, var(--accent-color-transparent) 100%);
   --shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
@@ -18,7 +19,12 @@
 
 body {
   font-family: var(--secondary-font);
-  padding-bottom: 4rem;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+p {
+  line-height: 2;
 }
 
 a:not(.btn) {
@@ -42,12 +48,41 @@ a.red-text:hover {
   background-color: var(--red);
 }
 
+.primary-text {
+  color: var(--primary-color);
+}
+
+.secondary-text {
+  color: var(--secondary-color);
+}
+
 .red-text {
   color: var(--red);
+}
+
+.accent-text {
+  color: var(--grey);
 }
 
 .Loader {
   display: flex;
   justify-content: center;
   margin-top: 10vh;
+}
+
+main {
+  min-height: calc(100vh - 180px - 58px);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.col-50 {
+  width: 50%;
 }
