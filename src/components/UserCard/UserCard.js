@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import './UserCard.css'
+import Button from '../utilities/Button/Button';
 
 function UserCard(props) {
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
@@ -10,28 +12,31 @@ function UserCard(props) {
 
     return (
         <div className="userCard">
-            <h2 style={{ fontSize: '15px' }}><span>{user.firstName} {user.lastName}</span> ({user.location})</h2>
+            <h2>{user.firstName} {user.lastName}</h2>
+            <p>{user.location}</p>
             <hr />
-            <h3>"{user.context}"</h3>
+            <p><i>"{user.context}"</i></p>
             <details>
                 <summary><span style={{ fontSize: '17px' }}>Tap for account info</span></summary>
                 <strong>{user.accountNumber}</strong> <br /> {user.bankName}
                 <br />
-                <div className="interact">
-                    <CopyToClipboard text={user.accountNumber}
-                        // eslint-disable-next-line no-sequences
-                        onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
-                    >
-                        <button key={user.id} id={user.id} className="Clipboard">{state.message}</button>
-                    </CopyToClipboard>
-                    &nbsp;
-                    <div className="Report">
+                <div className="interact row align-items-center text-center">
+                    <div className="col-m-50 col-100">
+                        <CopyToClipboard text={user.accountNumber}
+                            // eslint-disable-next-line no-sequences
+                            onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
+                        >
+                            <Button type="primary">{state.message}</Button>
+                        </CopyToClipboard>
+                    </div>
+                    <div className="col-m-50 col-100">
                         <a
                             target="_blank" rel="noopener noreferrer"
                             href={getAccountErrorEmailHref(user)}
+                            className="red-text"
                         >
                             Report problem with details
-                    </a>
+                        </a>
                     </div>
                 </div>
             </details>

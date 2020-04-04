@@ -1,16 +1,103 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: rgb(255, 255, 255);
-  position: relative;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Roboto-Mono&display=swap');
+:root {
+  --primary-font: 'Roboto Mono', monospace;
+  --secondary-font: 'Roboto Mono', monospace;
+  --primary-color: rgb(13, 73, 147);
+  --secondary-color:rgb(61, 114, 37);
+  --accent-color: #000000;
+  --primary-color-transparent: rgba(13, 73, 147, 0.81);
+  --secondary-color-transparent: rgba(61, 114, 147, 0.81);
+  --accent-color-transparent: rgb(0, 0, 0, 0.81);
+  --white: #ffffff;
+  --black: #000000;
+  --red: rgb(184, 44, 44);
+  --grey: rgb(97, 94, 94);
+  --gradient: linear-gradient(to bottom, var(--primary-color) 51%, var(--accent-color) 100%);
+  --gradient-transparent: linear-gradient(to bottom, var(--accent-color-transparent) 51%, var(--accent-color-transparent) 100%);
+  --shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: var(--secondary-font);
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+p {
+  line-height: 2;
+}
+
+a:not(.btn) {
+  color: initial;
+  text-decoration: none;
+  border-bottom: 3px solid var(--primary-color);
+  transition: .4s cubic-bezier(0.19, 1, 0.22, 1)
+}
+
+a:not(.btn):hover {
+  color: var(--white);
+  padding: 3px;
+  background-color: var(--primary-color);
+}
+
+a.red-text {
+  border-bottom: 3px solid var(--red);
+}
+
+a.red-text:hover {
+  background-color: var(--red);
+}
+
+.primary-text {
+  color: var(--primary-color);
+}
+
+.secondary-text {
+  color: var(--secondary-color);
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.accent-text {
+  color: var(--grey);
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+main {
+  min-height: calc(100vh - 180px - 58px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.col-100{
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+@media (min-width: 769px) {
+  .col-m-50 {
+    width: 50%;
+  }
 }

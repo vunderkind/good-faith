@@ -1,0 +1,23 @@
+.userCard {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    border: solid 0.5px var(--grey);
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--shadow);
+}
+
+details {
+    color: #3c3c3c;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.userCard h3 {
+    text-align: left;
+    line-height: 1.7;
+}

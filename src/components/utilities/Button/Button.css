@@ -1,0 +1,26 @@
+.btn {
+    padding: 20px 10px;
+    border-radius: 20px;
+    border: none;
+    font-family: var(--primary-font);
+    font-weight: bold;
+    outline: none;
+    margin-bottom: 3px;
+    display: inline-block;
+    text-decoration: none;
+    transition: linear 0.04s;
+}
+
+.btn:hover, .btn:active {
+    box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }

@@ -1,4 +1,5 @@
 import React from 'react'
+import "./SocialShare.css"
 
 function SocialShare(props) {
     return (
@@ -9,7 +10,7 @@ function SocialShare(props) {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <i className="fab fa-facebook"></i> Facebook
+                <i className="fab fa-facebook-f"></i>
             </a>
             &nbsp;
             <a
@@ -18,7 +19,7 @@ function SocialShare(props) {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <i className="fab fa-twitter"></i> Twitter
+                <i className="fab fa-twitter"></i>
             </a>
             &nbsp;
             <a
@@ -27,7 +28,7 @@ function SocialShare(props) {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <i className="fab fa-whatsapp"></i> WhatsApp
+                <i className="fab fa-whatsapp"></i>
             </a>
             &nbsp;
         </div>
