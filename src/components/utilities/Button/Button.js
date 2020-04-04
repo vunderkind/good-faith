@@ -11,12 +11,22 @@ function Button(props) {
             {props.children}
         </button>
         :
-        <Link 
-            className={"btn btn-" + props.type}
-            to={props.link}
-        >
-            {props.children}
-        </Link>
+        props.externalLink ?
+            <a 
+                className={"btn btn-" + props.type}
+                href={props.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                {props.children}
+            </a>
+            :
+            <Link 
+                className={"btn btn-" + props.type}
+                to={props.link}
+            >
+                {props.children}
+            </Link>
 }
 
 export default Button
