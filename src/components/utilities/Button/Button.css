@@ -4,6 +4,7 @@
     border: none;
     font-family: var(--primary-font);
     font-weight: bold;
+    font-size: 18px;
     outline: none;
     margin-bottom: 3px;
     display: inline-block;
