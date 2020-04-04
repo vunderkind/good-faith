@@ -12,6 +12,12 @@
     line-height: 40px;
 }
 
+.Linq a:hover {
+    background-color: transparent;
+    color: initial;
+    padding: 5px;
+}
+
 .Linq a.active {
     border-bottom: 3px solid var(--primary-color);
 }
