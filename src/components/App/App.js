@@ -15,23 +15,25 @@ const App = () => {
 
       <Header />
 
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/faq">
-          <FAQ />
-        </Route>
-        <Route path="/needhelp">
-          <NeedHelp />
-        </Route>
-        <Route path='/team'>
-          <Team />
-        </Route>
-      </Switch>
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
+          <Route path="/needhelp">
+            <NeedHelp />
+          </Route>
+          <Route path='/team'>
+            <Team />
+          </Route>
+        </Switch>
+      </main>
 
       <Footer />
     </Router>
