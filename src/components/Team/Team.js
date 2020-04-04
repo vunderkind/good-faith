@@ -1,16 +1,19 @@
 import React from 'react'
-import michael from '../photos/michael.jpg'
-import placeholder from '../photos/placeholder.png'
-import mischief from '../photos/mischief.jpg'
-import braimah from '../photos/braimah.jpg'
-import fatoke from '../photos/fatoke.jpeg'
-import janet from '../photos/janet.jpg'
-import falomo from '../photos/falomo.jpg'
-import etin from '../photos/etin.jpg'
-import ekene from '../photos/ekene.jpg'
-import juachi from '../photos/juachi.jpg'
-import deji from '../photos/deji.jpg'
-import ore from '../photos/ore.jpeg'
+
+import './Team.css'
+
+import michael from '../../photos/michael.jpg'
+import placeholder from '../../photos/placeholder.png'
+import mischief from '../../photos/mischief.jpg'
+import braimah from '../../photos/braimah.jpg'
+import fatoke from '../../photos/fatoke.jpeg'
+import janet from '../../photos/janet.jpg'
+import falomo from '../../photos/falomo.jpg'
+import etin from '../../photos/etin.jpg'
+import ekene from '../../photos/ekene.jpg'
+import juachi from '../../photos/juachi.jpg'
+import deji from '../../photos/deji.jpg'
+import ore from '../../photos/ore.jpeg'
 
 const Team = () => {
     let teamState = [
@@ -104,21 +107,21 @@ const Team = () => {
         },
 
     ]
-    return(
-        <div className="Angelcover">
+    return (
+        <div className="App">
             <h1 id="Team">Team</h1>
-        <div className="Angels">
-            {teamState && teamState.map((teammate)=>(
-                <div className="Archangels">
-                <img style={{height:'100px'}} src={teammate.photo? teammate.photo: placeholder} alt={teammate.name}/>
-                <h2>{teammate.name}</h2>
-                {/* <h3>{teammate.bio}</h3> */}
-                <h3>{teammate.role}</h3>
-                <p>{teammate.description}</p>
-            <p>{teammate.website? <a href={teammate.website}>Personal page</a>: null}</p>
-                </div>
-            ))}
-        </div>
+            <div className="Angels">
+                {teamState && teamState.map((teammate, index) => (
+                    <div key={index} className="Archangels">
+                        <img style={{ height: '100px' }} src={teammate.photo ? teammate.photo : placeholder} alt={teammate.name} />
+                        <h2>{teammate.name}</h2>
+                        {/* <h3>{teammate.bio}</h3> */}
+                        <h3>{teammate.role}</h3>
+                        <p>{teammate.description}</p>
+                        <p>{teammate.website ? <a href={teammate.website}>Personal page</a> : null}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

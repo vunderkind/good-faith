@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from '../Home'
 import About from '../About'
 import NeedHelp from '../NeedHelp'
-import Team from '../Team'
 import './App.css'
 import Footer from '../../Footer/Footer'
 import FAQ from '../FAQ'
 import Header from '../Header/Header'
+import Team from '../Team/Team'
 
 const App = () => {
   return (
