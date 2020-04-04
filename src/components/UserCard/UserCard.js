@@ -13,15 +13,15 @@ function UserCard(props) {
     return (
         <div className="userCard">
             <h2>{user.firstName} {user.lastName}</h2>
-            <small>{user.location}</small>
+            <p>{user.location}</p>
             <hr />
             <p><i>"{user.context}"</i></p>
             <details>
                 <summary><span style={{ fontSize: '17px' }}>Tap for account info</span></summary>
                 <strong>{user.accountNumber}</strong> <br /> {user.bankName}
                 <br />
-                <div className="interact row .align-items-center">
-                    <div className="col-50">
+                <div className="interact row align-items-center text-center">
+                    <div className="col-m-50 col-100">
                         <CopyToClipboard text={user.accountNumber}
                             // eslint-disable-next-line no-sequences
                             onCopy={() => (setState({ copied: true, message: 'Copied!' }), setTimeout(() => { setState({ message: 'Copy account number' }) }, 500))}
@@ -29,7 +29,7 @@ function UserCard(props) {
                             <Button type="primary">{state.message}</Button>
                         </CopyToClipboard>
                     </div>
-                    <div className="col-50">
+                    <div className="col-m-50 col-100">
                         <a
                             target="_blank" rel="noopener noreferrer"
                             href={getAccountErrorEmailHref(user)}

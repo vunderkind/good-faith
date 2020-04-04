@@ -1,4 +1,5 @@
 import React from 'react'
+import TextCenter from '../utilities/TextCenter/TextCenter';
 
 import './Team.css'
 
@@ -118,7 +119,9 @@ const Team = () => {
     ]
     return (
         <div className="App">
-            <h1 id="Team">Team</h1>
+            <TextCenter>
+                <h1>Team</h1>
+            </TextCenter>
             <div className="Angels">
                 {teamState && teamState.map((teammate, index) => (
                     <div key={index} className="Archangels">

@@ -1,13 +1,7 @@
 .Angels {
     display: flex;
     justify-content: center;
-    font-family: 'PT Serif', serif;
     flex-flow: wrap;
-}
-
-#Team {
-    font-family: 'Yeseva One', cursive;
-    color: rgb(16, 23, 16);
 }
 
 .Archangels {
@@ -34,7 +28,7 @@
 }
 
 .Archangels h2 {
-    color: rgb(61, 114, 37);
+    color: var(--secondary-color);
     font-size: 25px;
 }
 

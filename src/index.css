@@ -3,10 +3,10 @@
   --primary-font: 'Roboto Mono', monospace;
   --secondary-font: 'Roboto Mono', monospace;
   --primary-color: rgb(13, 73, 147);
-  --secondary-color: rgb(203, 244, 185);
+  --secondary-color:rgb(61, 114, 37);
   --accent-color: #000000;
   --primary-color-transparent: rgba(13, 73, 147, 0.81);
-  --secondary-color-transparent: rgba(203, 244, 185, 0.81);
+  --secondary-color-transparent: rgba(61, 114, 147, 0.81);
   --accent-color-transparent: rgb(0, 0, 0, 0.81);
   --white: #ffffff;
   --black: #000000;
@@ -74,15 +74,30 @@ main {
   min-height: calc(100vh - 180px - 58px);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .align-items-center {
   align-items: center;
 }
 
+.col-100{
+  width: 100%;
+}
+
 .col-50 {
   width: 50%;
+}
+
+@media (min-width: 769px) {
+  .col-m-50 {
+    width: 50%;
+  }
 }
