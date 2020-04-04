@@ -43,6 +43,7 @@ function Home() {
                 'Angels among us' is a simple tool for people with relatively secure financial statuses to help people whose means of livelihood have been affected by the COVID-19 outbreak.
               </p>
               <Button type="primary" onClick={fetchusers}>Be an angel</Button>
+              &nbsp;
               <Button type="secondary" link="needhelp">I need help</Button>
               <p>
                 When you click the 'Be an angel' button, you'll get a random list of <span>three</span> people you can contribute to.
