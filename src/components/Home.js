@@ -7,30 +7,13 @@ import TextCenter from './utilities/TextCenter/TextCenter';
 function Home() {
   const [visible, setvisible] = useState(true)
   const [users, setusers] = useState(null);
-  const apiURL = 'https://cors-anywhere.herokuapp.com/https://good-faith.herokuapp.com/api/people'
+  const apiURL = 'https://us-angels.herokuapp.com/api/v1/randomize-people?count=3'
   function fetchusers() {
     fetch(apiURL)
       .then(response => response.json())
-      .then(data => makeRandom(data))
-      .then(final => setusers(final))
+      .then(data => setusers(data))
     setvisible(!visible) //using this to manage the state of the results page
   }
-
-  function makeRandom(info) {
-    var arr = [];
-    let emptyArray = []
-    while (arr.length < 3) {
-      var r = Math.floor(Math.random() * info.length);
-      if (arr.indexOf(r) === -1) {
-        arr.push(r);
-        emptyArray.push(info[r])
-
-      }
-    }
-    return emptyArray
-
-  }
-
 
   return (
     <div className="App">
@@ -69,7 +52,7 @@ function Home() {
               /> : null}
               {users && users.map((user) => (
                 <UserCard
-                  key={user.id}
+                  key={user._id}
                   user={user}
                 />
               ))}
