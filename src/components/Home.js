@@ -7,7 +7,7 @@ import TextCenter from './utilities/TextCenter/TextCenter';
 function Home() {
   const [visible, setvisible] = useState(true)
   const [users, setusers] = useState(null);
-  const apiURL = 'https://us-angels.herokuapp.com/api/v1/randomize-people?count=3'
+  const apiURL = `${process.env.REACT_APP_PEOPLE_API}?count=${process.env.REACT_APP_PEOPLE_COUNT}`
   function fetchusers() {
     fetch(apiURL)
       .then(response => response.json())
