@@ -1,0 +1,9 @@
+.Donation {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.flex-justify-around {
+    display: flex;
+    justify-content: space-between;
+}

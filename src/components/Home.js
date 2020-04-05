@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 import UserCard from './UserCard/UserCard';
 import Button from './utilities/Button/Button';
 import TextCenter from './utilities/TextCenter/TextCenter';
+import Donation from './Donation/Donation';
 
 function Home() {
   const [visible, setvisible] = useState(true)
@@ -60,6 +61,15 @@ function Home() {
               <p>A list of people who have been economically affected by the COVID-19 virus and are currently without pay.</p>
               <p className="accent-text">Here are <span>three</span> randomly-generated individuals who you can help.<br /> If you'd like to donate to more people after your first three, refresh the page.</p>
             </TextCenter>
+
+            {users ?
+              <div>
+                <hr></hr>
+                <Donation recipients={users}/>
+              </div>
+              : null
+            }
+
             <div>
               {!users ? <Loader className="Loader"
                 type="BallTriangle"
