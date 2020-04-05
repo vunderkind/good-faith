@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Donation.css'
 import TextCenter from '../utilities/TextCenter/TextCenter.js'
-import Button from '../utilities/Button/Button'
+import Payment from '../Payment/Payment.js'
 
 function Donation( props ) {
     let recipients = props.recipients;
@@ -9,21 +9,73 @@ function Donation( props ) {
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
     const [isAnon, setIsAnon] = useState(true)
+    const [raveConfig, setRaveConfig] = useState(false);
+    const [donationRef, setDonationRef] = useState("");
+
+    const donationApiurl = ""; // TODO: use env
+    const flw_publickey = "FLWPUBK_TEST-4aa027b074b35d7017de3e8141784280-X"; // TODO: use env
 
     function initiateDonation(event) {
-
-        console.log("isAnon: " + isAnon);
-        console.log("donation amount: " + donationAmount);
-        console.log("donation email: " + donorEmail);
-        console.log("recipients:   " + recipients[0].firstName + " " + recipients[1].firstName + " " + recipients[2].firstName );
-        console.log( recipients );
+        event.preventDefault();
 
         // call backend api to get donation hash
+        const txref = getTransactionReference();
 
-        // package details for rave inline
+        // populate subaccounts with ratio
+        const subaccounts = packageRecipientSubAccounts();
 
-        // display
-        event.preventDefault();
+        // generate configuration values for rave
+        let flw_config = {
+            PBFPubKey: flw_publickey,
+            customer_email: donorEmail,
+            amount: donationAmount,
+            currency: "NGN",
+            txref: txref,
+            subaccounts: subaccounts,
+            production: false, // TOOD: use env
+        }
+        setRaveConfig(flw_config);
+    }
+
+    function validateDonation(){
+        alert("Validating donation");
+        // TODO: Call backend api
+        let donation_status = "success";
+
+        if (donation_status ==- "success") {
+            alert("Thank you for donating"); // TODO: Switch to a proper modal
+
+            // TODO: remove payment button
+        }
+    }
+
+    /**
+     * Populates recipients sub account using format specified here:
+     * 
+     */
+    function packageRecipientSubAccounts() {
+        let result = [];
+
+        recipients.forEach(recipient => {
+            result.push({
+                'id': recipient.subAccount,
+                'transaction_split_ratio': 1
+            })
+        });
+
+        return result;
+    }
+
+    /**
+     * Calls donation api to generate a donation reference for user
+     * 
+     * TODO: Call api endpoint
+     */
+    function getTransactionReference() {
+        let reference = "rave-12324";
+        setDonationRef( reference );
+
+        return reference;
     }
 
     /**
@@ -67,6 +119,11 @@ function Donation( props ) {
                     <input type="submit" value="Submit" />
                 </form>
             </TextCenter>
+
+            {!raveConfig ? null
+            : <Payment config={raveConfig} triggerValidation={validateDonation}></Payment> 
+            }
+
         </div>
     )
 }

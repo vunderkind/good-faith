@@ -31,6 +31,12 @@ function Home() {
     return emptyArray
 
   }
+  
+  const recipients_list = [
+    {subAccount: "RS_80DCD50DD06E4BBE8EA2559C8F96B001"},
+    {subAccount: "RS_2A40F8F228C12470290F1CE684D038E2"},
+    {subAccount: "RS_314784E7ABB753ADDB30A5E2E86DF464"}
+  ]
 
 
   return (
@@ -65,7 +71,7 @@ function Home() {
             {users ?
               <div>
                 <hr></hr>
-                <Donation recipients={users}/>
+                <Donation recipients={recipients_list}/>
               </div>
               : null
             }
