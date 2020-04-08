@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import './Donation.css'
-import TextCenter from '../utilities/TextCenter/TextCenter.js'
-import Payment from '../Payment/Payment.js'
+import React, { useState } from 'react';
+import axios from 'axios';
+import './Donation.css';
+import TextCenter from '../utilities/TextCenter/TextCenter.js';
+import Payment from '../Payment/Payment.js';
 
 function Donation( props ) {
     let recipients = props.recipients;
@@ -19,7 +20,12 @@ function Donation( props ) {
         event.preventDefault();
 
         // call backend api to get donation hash
-        const txref = getTransactionReference();
+        getTransactionReference();
+
+        if ( donationRef == "" ) {
+            // TODO: Figure out a way to display error messages
+            return;
+        }
 
         // populate subaccounts with ratio
         const subaccounts = packageRecipientSubAccounts();
@@ -30,9 +36,9 @@ function Donation( props ) {
             customer_email: donorEmail,
             amount: donationAmount,
             currency: "NGN",
-            txref: txref,
+            txref: donationRef,
             subaccounts: subaccounts,
-            production: false, // TOOD: use env
+            production: false, // TOOD: use env seperate PR
         }
         setRaveConfig(flw_config);
     }
@@ -67,15 +73,44 @@ function Donation( props ) {
     }
 
     /**
+     * This function is responsible for returning an array with
+     * just beneficiary ids
+     */
+    function getBeneficiaryIds() {
+        let result = [];
+
+        recipients.forEach(recipient => {
+            result.push( recipient[ "_id" ] )
+        });
+
+        return result;
+    }
+
+    /**
      * Calls donation api to generate a donation reference for user
      * 
-     * TODO: Call api endpoint
      */
-    function getTransactionReference() {
-        let reference = "rave-12324";
-        setDonationRef( reference );
+    async function getTransactionReference() {
+        // TODO: move to env
+        const donationApiUrl = "http://localhost:5000/api/v1/donations";
 
-        return reference;
+        const beneficiaryIds = getBeneficiaryIds(); 
+
+        const body = {
+            "donor": donorEmail,
+            "amount": donationAmount,
+            "beneficiary_ids": beneficiaryIds,
+            "source": "FLUTTERWAVE"
+        }
+
+        axios.post( donationApiUrl, body )
+            .then( res => {
+                if( res.status == 200 && res.data ) {
+                    // get the reference
+                    let reference = res.data.reference
+                    setDonationRef( reference );
+                }
+            });
     }
 
     /**
