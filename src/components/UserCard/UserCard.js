@@ -5,26 +5,20 @@ import Button from '../utilities/Button/Button';
 import axios from 'axios'
 
 function UserCard(props) {
-    // function login(){
-        // const response = axios.post(
-        //     `https://good-faith.herokuapp.com/api/login`, {
-        //         username: 'justin',
-        //         password: 12345
-        //     }
-
-        //   )
-        //   .then(res => console.log(res))
-        //   .catch(err => err.message)
-        // }
     const handleStatus = (e) => {
-        // login();
         const target = e.target
-        setDonated({status: target.checked, message: "Tell us how much?"})
+        setChecked({status: target.checked, message: "Tell us how much?"})
         console.log(target.checked)
     }
     function handleChange(e) {
+        let input = e.target.value
+        if(parseInt(input)){
         let number = parseInt(e.target.value)
-        setDonated({value: number, status:true});
+        setDonated({value: number});
+    }
+        else{
+            setDonated({placeholder:'sorry, numbers only'})
+        }
       }
 
     function thanksRandomizer() {
@@ -45,10 +39,11 @@ function UserCard(props) {
     }
 
       const [donated, setDonated] = useState({
-        status: false,
         message: "",
         value: "",
+        placeholder: ""
       })
+      const [checked,setChecked] = useState({status:false})
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
     let user = props.user;
     function getAccountErrorEmailHref(user) {
@@ -87,16 +82,16 @@ function UserCard(props) {
                         <br/>
                     </div>
                     <div className="Donated">
-                        {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
+                        {checked.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
                             I donated! 
                             <input type="checkbox" 
                             name="donated" 
-                            value={donated.status} 
+                            value={checked.status} 
                             onChange={handleStatus}></input>
                                 {/* <br /> */}
-                            {donated.status? <p className="Howmuch"><br/>{donated.message}</p>:null}
+                            {checked.status? <p className="Howmuch"><br/>{donated.message}</p>:null}
                             <label>
-                            {donated.status?
+                            {checked.status?
                             <input 
                             type="text"
                             placeholder="2000"
@@ -104,9 +99,9 @@ function UserCard(props) {
                             onChange={handleChange} 
                             className="Input">
                             </input>:null}
-                            {donated.value}
+                            {donated.value && donated.value===Number?null:null}
                             </label><br/>
-                            {donated.status? <button onClick={postDonation} className="Button">Submit</button>: null}
+                            {checked.status? <button onClick={postDonation} className="Button">Submit</button>: null}
                     </div>
                 </div>
             </details>
