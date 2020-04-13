@@ -21,3 +21,45 @@ details {
     text-align: left;
     line-height: 1.7;
 }
+
+.random-thanks{
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+    padding-top:15px;
+}
+
+.Donated {
+    background: rgb(255, 208, 128);
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100vw;
+    border-radius: 15px 15px 15px 0;
+}
+
+.Donated p {
+    margin: 0;
+    line-height: 1;
+}
+
+.Button {
+    width: 150px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+.Input{
+    width:40vw;
+    border-radius: 10px;
+    box-shadow: none;
+    height: 20px;
+    margin: 0 auto;
+    /* margin-top:30px; */
+}

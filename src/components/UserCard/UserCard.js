@@ -5,19 +5,19 @@ import Button from '../utilities/Button/Button';
 import axios from 'axios'
 
 function UserCard(props) {
-    function login(){
-        const response = axios.post(
-            `https://good-faith.herokuapp.com/api/login`, {
-                username: 'justin',
-                password: 12345
-            }
+    // function login(){
+        // const response = axios.post(
+        //     `https://good-faith.herokuapp.com/api/login`, {
+        //         username: 'justin',
+        //         password: 12345
+        //     }
 
-          )
-          .then(res => console.log(res))
-          .catch(err => err.message)
-        }
+        //   )
+        //   .then(res => console.log(res))
+        //   .catch(err => err.message)
+        // }
     const handleStatus = (e) => {
-        login();
+        // login();
         const target = e.target
         setDonated({status: target.checked, message: "Tell us how much?"})
         console.log(target.checked)
@@ -27,7 +27,7 @@ function UserCard(props) {
       }
 
     function thanksRandomizer() {
-        const thanks = ['Thank you so much!🙏', 'Amazing! 🕺🏿', 'That\'s rad! 👍🏿', 'Thank you! ❤️', 'You\'re a lifesaver! 🤗', 'The world is lucky to have you in it! 🏄‍♂️🏄‍♂️']
+        const thanks = ['Thank you!🙏', 'Amazing! 🕺🏿', 'Radical! 👍🏿', 'Nice! ❤️', 'Excellent 🤗', 'Whoop! 🏄‍♂️🏄‍♂️', '👼🏽👼🏽👼🏽👼🏽', 'Omg thank you! 🌻']
         const randomthanks = thanks[Math.floor(Math.random() * thanks.length)]
         return randomthanks
         
@@ -84,23 +84,23 @@ function UserCard(props) {
                     </div>
                     <div className="Donated">
                         <label>
+                        {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
                             I donated! 
                             <input type="checkbox" 
                             name="donated" 
                             value={donated.status} 
                             onChange={handleStatus}></input>
                             </label>
-                            {donated.status? <p>{thanksRandomizer()}</p>: null}
-                            <label>
                                 <br />
                             {donated.status? <p>{donated.message}</p>:null}
-                            <input 
-                            type="text" 
+                            {donated.status?<input 
+                            type="text"
+                            placeholder="2000"
                             value={donated.value} 
-                            onChange={handleChange}>
-                            </input>
-                            <button onClick={postDonation}>Submit</button>
-                            </label>
+                            onChange={handleChange} 
+                            className="Input">
+                            </input>:null}<br/>
+                            {donated.status? <button onClick={postDonation} className="Button">Submit</button>: null}
                     </div>
                 </div>
             </details>
