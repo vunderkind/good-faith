@@ -83,16 +83,14 @@ function UserCard(props) {
                         </a>
                     </div>
                     <div className="Donated">
-                        <label>
                         {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
                             I donated! 
                             <input type="checkbox" 
                             name="donated" 
                             value={donated.status} 
                             onChange={handleStatus}></input>
-                            </label>
-                                <br />
-                            {donated.status? <p>{donated.message}</p>:null}
+                                {/* <br /> */}
+                            {donated.status? <p className="Howmuch"><br/>{donated.message}</p>:null}
                             {donated.status?<input 
                             type="text"
                             placeholder="2000"
