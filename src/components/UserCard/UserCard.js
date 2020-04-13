@@ -22,8 +22,9 @@ function UserCard(props) {
         setDonated({status: target.checked, message: "Tell us how much?"})
         console.log(target.checked)
     }
-    const handleChange=(e)=> {
-        setDonated({value: e.target.value});
+    function handleChange(e) {
+        let number = parseInt(e.target.value)
+        setDonated({value: number, status:true});
       }
 
     function thanksRandomizer() {
@@ -46,7 +47,7 @@ function UserCard(props) {
       const [donated, setDonated] = useState({
         status: false,
         message: "",
-        value:""
+        value: "",
       })
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
     let user = props.user;
@@ -73,14 +74,17 @@ function UserCard(props) {
                             <Button type="primary">{state.message}</Button>
                         </CopyToClipboard>
                     </div>
+                    <br/>
                     <div className="col-m-50 col-100">
                         <a
                             target="_blank" rel="noopener noreferrer"
                             href={getAccountErrorEmailHref(user)}
                             className="red-text"
                         >
+                            
                             Report problem with details
                         </a>
+                        <br/>
                     </div>
                     <div className="Donated">
                         {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
@@ -91,13 +95,17 @@ function UserCard(props) {
                             onChange={handleStatus}></input>
                                 {/* <br /> */}
                             {donated.status? <p className="Howmuch"><br/>{donated.message}</p>:null}
-                            {donated.status?<input 
+                            <label>
+                            {donated.status?
+                            <input 
                             type="text"
                             placeholder="2000"
                             value={donated.value} 
                             onChange={handleChange} 
                             className="Input">
-                            </input>:null}<br/>
+                            </input>:null}
+                            {donated.value}
+                            </label><br/>
                             {donated.status? <button onClick={postDonation} className="Button">Submit</button>: null}
                     </div>
                 </div>
