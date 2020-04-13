@@ -1,19 +1,30 @@
 import React, { useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
-<<<<<<< HEAD:src/components/UserCard.js
-import axios from 'axios'
-
-=======
 import './UserCard.css'
 import Button from '../utilities/Button/Button';
->>>>>>> ad3a75b2d9d74b4c93b446cb752a72e801e4b46a:src/components/UserCard/UserCard.js
+import axios from 'axios'
 
 function UserCard(props) {
+    function login(){
+        const response = axios.post(
+            `https://good-faith.herokuapp.com/api/login`, {
+                username: 'justin',
+                password: 12345
+            }
+
+          )
+          .then(res => console.log(res))
+          .catch(err => err.message)
+        }
     const handleStatus = (e) => {
+        login();
         const target = e.target
-        setDonated({status: target.checked})
+        setDonated({status: target.checked, message: "Tell us how much?"})
         console.log(target.checked)
     }
+    const handleChange=(e)=> {
+        setDonated({value: e.target.value});
+      }
 
     function thanksRandomizer() {
         const thanks = ['Thank you so much!🙏', 'Amazing! 🕺🏿', 'That\'s rad! 👍🏿', 'Thank you! ❤️', 'You\'re a lifesaver! 🤗', 'The world is lucky to have you in it! 🏄‍♂️🏄‍♂️']
@@ -23,11 +34,10 @@ function UserCard(props) {
     }
 
     
-    async function postDonation(){
-    const response = await axios.put(
-        `https://good-faith.herokuapp.com/api/people/29`,
-        { donationAmount: "1000.00" },
-        { headers: { 'Content-Type': 'application/json' } }
+    function postDonation(){
+    const response = axios.put(
+        `http://127.0.0.1:5000/api/people/${user.id}`,
+        { "donationAmount": donated.value },
       )
       .then(res => console.log(res))
       .catch(err => response.error)
@@ -35,7 +45,8 @@ function UserCard(props) {
 
       const [donated, setDonated] = useState({
         status: false,
-        message: "Tell us how much?"
+        message: "",
+        value:""
       })
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
     let user = props.user;
@@ -81,8 +92,13 @@ function UserCard(props) {
                             </label>
                             {donated.status? <p>{thanksRandomizer()}</p>: null}
                             <label>
-                            Tell us how much you donated
-                            <input type='text'></input>
+                                <br />
+                            {donated.status? <p>{donated.message}</p>:null}
+                            <input 
+                            type="text" 
+                            value={donated.value} 
+                            onChange={handleChange}>
+                            </input>
                             <button onClick={postDonation}>Submit</button>
                             </label>
                     </div>
