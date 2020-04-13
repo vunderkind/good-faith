@@ -1,0 +1,11 @@
+.Footer {
+    height: 3rem;
+    padding: 5px;
+    background: black;
+    color: gray;
+}
+
+.Footer h2 {
+    font-size: small;
+    padding-left: 3vw;
+}

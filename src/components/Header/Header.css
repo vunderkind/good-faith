@@ -1,0 +1,25 @@
+.Linq {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 0;
+    height: 40px;
+    box-shadow: var(--shadow);
+}
+
+.Linq a {
+    text-decoration: none;
+    border-bottom: none;
+    padding: 5px;
+    line-height: 40px;
+}
+
+.Linq a:hover {
+    background-color: transparent;
+    color: initial;
+    padding: 5px;
+}
+
+.Linq a.active {
+    border-bottom: 3px solid var(--primary-color);
+}
