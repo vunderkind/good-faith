@@ -5,6 +5,14 @@ import Button from '../utilities/Button/Button';
 import axios from 'axios'
 
 function UserCard(props) {
+    //State lives here
+    const [donated, setDonated] = useState({
+        message: "",
+        value: "",
+        placeholder: ""
+      })
+    
+    //Function that fires when you click the checkbox
     const handleStatus = (e) => {
         const target = e.target
         setChecked({status: target.checked, message: "Tell us how much?"})
@@ -28,7 +36,7 @@ function UserCard(props) {
         
     }
 
-    
+    // Function that posts donation amount back to server
     function postDonation(){
     const response = axios.put(
         `http://127.0.0.1:5000/api/people/${user.id}`,
@@ -38,11 +46,6 @@ function UserCard(props) {
       .catch(err => response.error)
     }
 
-      const [donated, setDonated] = useState({
-        message: "",
-        value: "",
-        placeholder: ""
-      })
       const [checked,setChecked] = useState({status:false})
     const [state, setState] = useState({ copied: false, message: 'Copy account number' })
     let user = props.user;
