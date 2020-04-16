@@ -8,7 +8,7 @@ function Home() {
   const [visible, setvisible] = useState(true)
  
   const [users, setusers] = useState(null);
-  const apiURL = 'https://cors-anywhere.herokuapp.com/https://good-faith.herokuapp.com/api/people'
+  const apiURL = 'https://good-faith.herokuapp.com/api/people'
   function fetchusers() {
     fetch(apiURL)
       .then(response => response.json())

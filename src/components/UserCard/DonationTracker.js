@@ -1,13 +1,13 @@
 import React from 'react';
-import axios from 'axios'
-import { useState } from 'react'
+import axios from 'axios';
+import { useState } from 'react';
 
 function DonationTracker(props){
  const [donated, setDonated] = useState({
         status: false,
         message: "I donated!",
         amount: "",
-        done: "",
+        done: "Tell us how much?",
         submitted: false
       })
     
@@ -23,28 +23,31 @@ function DonationTracker(props){
     }
 
 
-      function thanksRandomizer() {
-        const thanks = ['Thank you!🙏', 'Amazing! 🕺🏿', 'Radical! 👍🏿', 'Nice! ❤️', 'Excellent 🤗', 'Whoop! 🏄‍♂️🏄‍♂️', '👼🏽👼🏽👼🏽👼🏽', 'Omg thank you! 🌻']
-        const randomthanks = thanks[Math.floor(Math.random() * thanks.length)]
-        return randomthanks
+    //   function thanksRandomizer() {
+    //     const thanks = ['Thank you!🙏', 'Amazing! 🕺🏿', 'Radical! 👍🏿', 'Nice! ❤️', 'Excellent 🤗', 'Whoop! 🏄‍♂️🏄‍♂️', '👼🏽👼🏽👼🏽👼🏽', 'Omg thank you! 🌻']
+    //     const randomthanks = thanks[Math.floor(Math.random() * thanks.length)]
+    //     return randomthanks
         
-    }
+    // }
     function postDonation(){
-        const response = axios.put(
-            `http://127.0.0.1:5000/api/people/${props.user.id}`,
+        axios.put(
+            `https://good-faith.herokuapp.com/api/people/${props.user.id}`,
             { "donationAmount": donated.amount },
           )
           .then(res => console.log(res))
-          .catch(err => response.error)
+          .catch(err => console.log(err.message))
           setDonated({
               ...donated,
-              submitted: true
+              submitted: true,
+              status: false,
+              message: "Thank you!",
+
           })
         }
     
     return(
         <div className="Donated">
-                        {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null}
+                        {/* {donated.status? <p className="random-thanks">{thanksRandomizer()}</p>: null} */}
                             {donated.message}
                             <input 
                             type="checkbox"
@@ -67,7 +70,7 @@ function DonationTracker(props){
                             className="Input"/>:null}
                             </label><br/>
                             {donated.status? <button onClick={postDonation} className="Button">Submit</button>: null}
-                            {donated.submitted? <p className="submit">You donated to {props.user.firstName}!</p>: null}
+                            {donated.submitted? <p className="submit">You donated N{donated.amount} to {props.user.firstName}!</p>: null}
                     </div>
     
     )
