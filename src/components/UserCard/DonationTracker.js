@@ -1,8 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { Event } from "../Tracking";
 
 function DonationTracker(props){
+
  const [donated, setDonated] = useState({
         status: false,
         message: "I donated!",
@@ -42,7 +44,8 @@ function DonationTracker(props){
               status: false,
               message: "Thank you!",
 
-          })
+          });
+          Event("Donation", "Donated", "Submit_Donation", `${donated.amount}`)
         }
     
     return(
