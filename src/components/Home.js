@@ -6,10 +6,7 @@ import TextCenter from './utilities/TextCenter/TextCenter';
 
 function Home() {
   const [visible, setvisible] = useState(true)
-  const [donated, setDonated] = useState({
-    donated: false,
-    message: "Tell us how much?"
-  })
+ 
   const [users, setusers] = useState(null);
   const apiURL = 'https://cors-anywhere.herokuapp.com/https://good-faith.herokuapp.com/api/people'
   function fetchusers() {

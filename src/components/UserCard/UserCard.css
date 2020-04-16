@@ -22,6 +22,11 @@ details {
     line-height: 1.7;
 }
 
+.submit {
+    color: rgb(65, 157, 68);
+    padding-bottom: 10px
+}
+
 .random-thanks{
     font-family: 'Roboto', sans-serif;
     font-size: small;
