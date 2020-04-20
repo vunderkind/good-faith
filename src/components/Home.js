@@ -7,8 +7,10 @@ import Donation from './Donation/Donation';
 
 function Home() {
   const [visible, setvisible] = useState(true)
+ 
   const [users, setusers] = useState(null);
   const apiURL = `https://good-faith-staging.herokuapp.com/api/v1/randomize-people`
+
   function fetchusers() {
     fetch(apiURL)
       .then(response => response.json())
