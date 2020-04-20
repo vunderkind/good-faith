@@ -8,21 +8,13 @@ import Donation from './Donation/Donation';
 function Home() {
   const [visible, setvisible] = useState(true)
   const [users, setusers] = useState(null);
-  const apiURL = `https://us-angels.herokuapp.com/api/v1/randomize-people?count=3`
+  const apiURL = `https://good-faith-staging.herokuapp.com/api/v1/randomize-people`
   function fetchusers() {
     fetch(apiURL)
       .then(response => response.json())
       .then(data => setusers(data))
     setvisible(!visible) //using this to manage the state of the results page
   }
-  
-  // this variable is intended to mock the recipient list that will be returned
-  // from backend api
-  const recipients_list = [
-    {subAccount: "RS_80DCD50DD06E4BBE8EA2559C8F96B001", "_id": "21324"},
-    {subAccount: "RS_2A40F8F228C12470290F1CE684D038E2", "_id": "52323"},
-    {subAccount: "RS_314784E7ABB753ADDB30A5E2E86DF464", "_id": "36343"}
-  ]
 
   return (
     <div className="App">
@@ -56,7 +48,7 @@ function Home() {
             {users ?
               <div>
                 <hr></hr>
-                <Donation recipients={recipients_list}/>
+                <Donation recipients={users}/>
               </div>
               : null
             }
