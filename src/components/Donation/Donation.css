@@ -5,5 +5,32 @@
 
 .flex-justify-around {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+
+.submit-section {
+    margin-top: 20px;
+}
+
+.pay-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.donation-amount-input {
+    border: 3px inset #ccc;
+}
+.donation-amount-input input {
+    border: 0;
+}
+
+.abort-button {
+    margin-right: 10px;
+}
+
+.black {
+    background-color: #333333;
 }

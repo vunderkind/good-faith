@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Donation.css';
 import TextCenter from '../utilities/TextCenter/TextCenter.js';
 import Payment from '../Payment/Payment.js';
+import './Donation.css';
 
 function Donation( props ) {
     let recipients = props.recipients;
@@ -13,22 +13,19 @@ function Donation( props ) {
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
 
-    const donationApiurl = ""; // TODO: use env
-    const flw_publickey = "FLWPUBK_TEST-4aa027b074b35d7017de3e8141784280-X"; // TODO: use env
-
-    function initiateDonation(event) {
+    async function initiateDonation(event) {
         event.preventDefault();
 
         // call backend api to get donation hash
-        getTransactionReference();
-
-        if ( donationRef == "" ) {
-            // TODO: Figure out a way to display error messages
+        const txnRef = await getTransactionReference();
+        if ( !txnRef ) {
             return;
         }
+        setDonationRef(txnRef);
 
         // populate subaccounts with ratio
         const subaccounts = packageRecipientSubAccounts();
+        const flw_publickey = "FLWPUBK_TEST-4aa027b074b35d7017de3e8141784280-X"; // TODO: use env
 
         // generate configuration values for rave
         let flw_config = {
@@ -36,22 +33,37 @@ function Donation( props ) {
             customer_email: donorEmail,
             amount: donationAmount,
             currency: "NGN",
-            txref: donationRef,
+            txref: txnRef,
             subaccounts: subaccounts,
             production: false, // TOOD: use env seperate PR
         }
         setRaveConfig(flw_config);
     }
 
-    function validateDonation(){
-        alert("Validating donation");
-        // TODO: Call backend api
-        let donation_status = "success";
+    /**
+     * Makes request to validate a donation
+     * 
+     * Redirect the user to a status page if donation is successful!
+     */
+    async function validateDonation(){
+        const validateUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations/status";
 
-        if (donation_status ==- "success") {
-            alert("Thank you for donating"); // TODO: Switch to a proper modal
+        const apiResponse = await axios.post(validateUrl, {reference: donationRef});
+        console.log(apiResponse);
 
-            // TODO: remove payment button
+        if( apiResponse.status !== 200 ) {
+            let error_message = "Sorry an error occured processing your donation.\n";
+            error_message += `Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            alert(error_message);
+            setRaveConfig(false);
+        } else if( apiResponse.data.status !== "SUCCESS" ) {
+            let error_message = "Donation attempt unsuccessful\n";
+            error_message += `To dispute this, Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            alert(error_message);
+            setRaveConfig(false);
+        } else{
+            // if payment is successful, send the user to donation page
+            window.location.href = `/donations/${donationRef}`;
         }
     }
 
@@ -64,7 +76,7 @@ function Donation( props ) {
 
         recipients.forEach(recipient => {
             result.push({
-                'id': recipient.subAccount,
+                'id': recipient.subaccount,
                 'transaction_split_ratio': 1
             })
         });
@@ -91,8 +103,12 @@ function Donation( props ) {
      * 
      */
     async function getTransactionReference() {
+        if ( (parseInt(donationAmount) || 0) <= 0 ) { //TODO: make this configurable
+            alert("Please enter a valid donation amount in Naira");
+            return null;
+        }
         // TODO: move to env
-        const donationApiUrl = "http://localhost:5000/api/v1/donations";
+        const donationApiUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations";
 
         const beneficiaryIds = getBeneficiaryIds(); 
 
@@ -103,14 +119,13 @@ function Donation( props ) {
             "source": "FLUTTERWAVE"
         }
 
-        axios.post( donationApiUrl, body )
-            .then( res => {
-                if( res.status == 200 && res.data ) {
-                    // get the reference
-                    let reference = res.data.reference
-                    setDonationRef( reference );
-                }
-            });
+        const apiResponse = await axios.post( donationApiUrl, body );
+        if( apiResponse.status !== 200 ) {
+            return null;
+        }
+        const donationRef = apiResponse.data.reference;
+
+        return donationRef;
     }
 
     /**
@@ -127,20 +142,23 @@ function Donation( props ) {
         <div className="Donation">
             <TextCenter>
                 <form onSubmit={initiateDonation}>
-                    <label className="flex-justify-around">
-                        How much in Naira do you want to donate?
-                        <input type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)}></input>
+                    <label className="donation-input-section">
+                        <p>How much in Naira do you want to donate?<br/>
+                        The amount will be split equally among recipients listed below.</p>
+                        <span className="donation-amount-input">
+                            ₦<input type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)}></input>
+                        </span>
                     </label>
 
-                    <label className="flex-justify-around">
-                        Share email?
+                    <label className="donation-input-section">
+                        <p>Share email?</p>
                         <input type="checkbox" 
                         onChange={event => setIsAnon(event.target.checked ? false : true)}></input>
                     </label>
 
                     {!isAnon ?
-                        <label className="flex-justify-around">
-                            Email address
+                        <label className="donation-input-section">
+                            <p>Email address</p>
                             <input type="email"
                             pattern="[^ @]*@[^ @]*"
                             name="donorEmail"
@@ -149,14 +167,23 @@ function Donation( props ) {
                     : null
                     }
 
-                    <p>The amount will be split equally among recipients listed below.</p>
+                    {raveConfig ? null
+                    :
+                        <div className="submit-section">
+                            <input className="btn btn-secondary black" type="submit" value="Start Donation" />
+                        </div>
+                    }
 
-                    <input type="submit" value="Submit" />
                 </form>
             </TextCenter>
 
             {!raveConfig ? null
-            : <Payment config={raveConfig} triggerValidation={validateDonation}></Payment> 
+            : 
+            <div className="pay-section">
+                <button className="btn btn-danger abort-button" onClick={event => setRaveConfig(false)}>Abort</button>
+
+                <Payment config={raveConfig} triggerValidation={validateDonation}></Payment>
+            </div> 
             }
 
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import TextCenter from '../utilities/TextCenter/TextCenter.js'
 import { useRavePayment } from 'react-ravepayment'
+import './Payment.css';
 
 const Payment = ({ config, triggerValidation}) => {
 
@@ -8,7 +9,7 @@ const Payment = ({ config, triggerValidation}) => {
 
     return(
         <TextCenter>
-            <button onClick={() => {
+            <button className="btn btn-primary flw-accent" onClick={() => {
                 initializePayment(triggerValidation, triggerValidation)
             }}>Pay with Flutterwave</button>
         </TextCenter>
