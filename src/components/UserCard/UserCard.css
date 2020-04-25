@@ -1,0 +1,79 @@
+.userCard {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    border: solid 0.5px var(--grey);
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--shadow);
+}
+
+details {
+    color: #3c3c3c;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.userCard h3 {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.submit {
+    color: rgb(65, 157, 68);
+    padding: 5px 5px 10px 5px
+}
+
+.random-thanks{
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+    padding-top:15px;
+}
+
+.Donated {
+    background: rgb(255, 208, 128);
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100vw;
+    border-radius: 15px 15px 15px 0;
+}
+
+.Donated p {
+    margin: 0;
+    line-height: 1;
+}
+
+.Button {
+    width: 150px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    border-radius: 10px;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+.Input{
+    width:50%;
+    border-radius: 10px;
+    border-style: none;
+    height: 35px;
+    /* padding: 3px; */
+    text-align: center;
+    margin: 0 auto;
+    margin-top:15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.Howmuch{
+    font-size:15px;
+}

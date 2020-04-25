@@ -1,0 +1,37 @@
+.Angels {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+.Archangels {
+    padding: 20px;
+    width: 15em;
+    border: 1px solid rgb(215, 215, 215);
+    background: rgb(255, 255, 255);
+    margin: 2px;
+    text-align: center;
+    /* margin-top: 5em; */
+}
+
+.Angels :hover {
+    -webkit-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+    -moz-box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+    box-shadow: 3px 3px 4px 1px rgba(11, 13, 26, 0.1);
+}
+
+.Archangels img {
+    /* width: 35%; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.Archangels h2 {
+    color: var(--secondary-color);
+    font-size: 25px;
+}
+
+.Angels h2 :hover {
+    color: rgb(169, 46, 83);
+}
