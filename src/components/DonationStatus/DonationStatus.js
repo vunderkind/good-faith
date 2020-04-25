@@ -34,7 +34,7 @@ function DonationStatus() {
               <Fragment>
                   <TextCenter>
                     <hr />
-                    <p>Thank you for donating {donation.donor}. Here's your donation summary</p>
+                    <p>Thank you for donating! Here's your donation summary</p>
                     <h1>Donation Status: {donation.status}</h1>
                     <p>Reference: {donation.reference}</p>
 
