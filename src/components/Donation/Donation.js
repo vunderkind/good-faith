@@ -49,9 +49,8 @@ function Donation( props ) {
         const validateUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations/status";
 
         const apiResponse = await axios.post(validateUrl, {reference: donationRef});
-        console.log(apiResponse);
 
-        if( apiResponse.status !== 200 ) {
+        if( !apiResponse || apiResponse.status !== 200 ) {
             let error_message = "Sorry an error occured processing your donation.\n";
             error_message += `Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
             alert(error_message);

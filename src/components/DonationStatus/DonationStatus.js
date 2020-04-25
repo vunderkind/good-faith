@@ -39,7 +39,12 @@ function DonationStatus() {
                     <p>Reference: {donation.reference}</p>
 
                     <p>Amount: NGN {donation.amount}</p>
-                    <p>Processing Fee: NGN {donation.fee}</p>
+                    <p><a href="https://flutterwave.com/us/pricing">Payment Processor Fee</a>: NGN {donation.fee}</p>
+
+                    {
+                    donation.cbnstampdutycharge ?
+                    <p><a href='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'>CBN Stamp Duty Charge</a>: NGN {donation.cbnstampdutycharge}</p> : null
+                    }
 
                     <div>
                         <h3>Recipients</h3>
