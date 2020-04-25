@@ -55,16 +55,28 @@ function Donation( props ) {
             let error_message = "Sorry an error occured processing your donation.\n";
             error_message += `Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
             alert(error_message);
-            setRaveConfig(false);
+            handlePostDonation();
         } else if( apiResponse.data.status !== "SUCCESS" ) {
             let error_message = "Donation attempt unsuccessful\n";
             error_message += `To dispute this, Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
             alert(error_message);
-            setRaveConfig(false);
+            handlePostDonation();
         } else{
             // if payment is successful, send the user to donation page
             window.location.href = `/donations/${donationRef}`;
         }
+    }
+
+    /**
+     * There's currently some quirky behavior in which the rave
+     * modal library fails to render again after it's been rendered once
+     * on a page. To mitigate, we just trigger a page reload.
+     * 
+     * This will only affect users who open the rave modal and don't complete
+     * the payment. Will need to invest some time root cause
+     */
+    function handlePostDonation() {
+        window.location.reload()
     }
 
     /**
@@ -182,7 +194,7 @@ function Donation( props ) {
             <div className="pay-section">
                 <button className="btn btn-danger abort-button" onClick={event => setRaveConfig(false)}>Abort</button>
 
-                <Payment config={raveConfig} triggerValidation={validateDonation}></Payment>
+                <Payment config={raveConfig} triggerValidation={validateDonation} afterClose={validateDonation}></Payment>
             </div> 
             }
 

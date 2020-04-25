@@ -5,6 +5,7 @@ import axios from 'axios';
 import './DonationStatus.css';
 import TextCenter from '../utilities/TextCenter/TextCenter';
 import Button from '../utilities/Button/Button';
+import SocialShare from '../SocialShare/SocialShare';
 
 function DonationStatus() {
     let { ref } = useParams();
@@ -38,13 +39,20 @@ function DonationStatus() {
                     <p>Reference: {donation.reference}</p>
 
                     <p>Amount: NGN {donation.amount}</p>
+                    <p>Processing Fee: NGN {donation.fee}</p>
 
                     <div>
                         <h3>Recipients</h3>
-                        {donation.beneficiaries.map(recipient => <p>{recipient.firstName} {recipient.lastName}</p>)}
+                        {donation.beneficiaries.map(recipient => <p>{recipient.firstName} {recipient.lastName} - NGN {recipient.amtRecvd}</p>)}
                     </div>
 
                     <Button type="primary" link="/">Go Home</Button>
+                    <p>Share with your network!</p>
+                    <SocialShare
+                        text={"I just donated to some people who have been impacted by COVID-19. You can use this to get a randomly-generated list of three people who need your help."}
+                        url={window.location.origin}
+                        tag={"#AngelsAmongUs"}
+                    />
 
                   </TextCenter>
               </Fragment>}
