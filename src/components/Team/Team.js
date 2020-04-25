@@ -1,20 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD:src/components/Team.js
-import '../App.css'
-import michael from '../photos/michael.jpg'
-import placeholder from '../photos/placeholder.png'
-import mischief from '../photos/mischief.jpg'
-import braimah from '../photos/braimah.jpg'
-import fatoke from '../photos/fatoke.jpeg'
-import janet from '../photos/janet.jpg'
-import falomo from '../photos/falomo.jpg'
-import etin from '../photos/etin.jpg'
-import ekene from '../photos/ekene.jpg'
-import juachi from '../photos/juachi.jpg'
-import deji from '../photos/deji.jpg'
-import ore from '../photos/ore.jpeg'
-import maro from '../photos/maro.jpg'
-=======
 import TextCenter from '../utilities/TextCenter/TextCenter';
 
 import './Team.css'
@@ -32,7 +16,6 @@ import juachi from '../../photos/juachi.jpg'
 import deji from '../../photos/deji.jpg'
 import ore from '../../photos/ore.jpeg'
 import maro from '../../photos/maro.jpg'
->>>>>>> master:src/components/Team/Team.js
 
 const Team = () => {
     let teamState = [
@@ -125,11 +108,7 @@ const Team = () => {
             photo: deji,
         },
         {
-<<<<<<< HEAD:src/components/Team.js
-            name: "Akpobi maro",
-=======
             name: "Akpobi Maro",
->>>>>>> master:src/components/Team/Team.js
             bio: "explore",
             website: "",
             role: "Angel",
