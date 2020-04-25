@@ -8,7 +8,9 @@ import Footer from '../Footer/Footer'
 import FAQ from '../FAQ'
 import Header from '../Header/Header'
 import Team from '../Team/Team'
+import DonationStatus from '../DonationStatus/DonationStatus'
 import {PageView, initGA} from '../Tracking/index.js';
+
 
 const App = () => {
   initGA('UA-68989854-7');
@@ -34,6 +36,9 @@ const App = () => {
           </Route>
           <Route path='/team'>
             <Team />
+          </Route>
+          <Route path='/donations/:ref'>
+            <DonationStatus />
           </Route>
         </Switch>
       </main>
