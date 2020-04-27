@@ -27,7 +27,7 @@ function DonationStatus() {
         <div className="App">
             {!donation ? <Loader className="Loader"
                 type="BallTriangle"
-                color="#008000"
+                color="#FF4444"
                 height={40}
                 width={40}
               /> : 
@@ -38,23 +38,24 @@ function DonationStatus() {
                     <h1>Donation Status: {donation.status}</h1>
                     <p>Reference: {donation.reference}</p>
 
-                    <p>Amount: NGN {donation.amount}</p>
-                    <p><a href="https://flutterwave.com/us/pricing">Payment Processor Fee</a>: NGN {donation.fee}</p>
+                    <p><strong>You donated:</strong> NGN {donation.amount}</p>
+                    <p><strong>Payment Processor Fee: </strong>NGN {donation.fee}<br/><a href="https://flutterwave.com/us/pricing">(About this)</a></p> 
 
                     {
                     donation.cbnstampdutycharge ?
-                    <p><a href='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'>CBN Stamp Duty Charge</a>: NGN {donation.cbnstampdutycharge}</p> : null
+                    <p><strong>CBN Stamp Duty Charge:</strong> NGN {donation.cbnstampdutycharge}<br/><a href='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'>(Details)</a></p> : null
                     }
-
+                    <br/>
+                    <hr/>
                     <div>
-                        <h3>Recipients</h3>
-                        {donation.beneficiaries.map(recipient => <p>{recipient.firstName} {recipient.lastName} - NGN {recipient.amtRecvd}</p>)}
+                        <h2>You've just helped:</h2>
+                        {donation.beneficiaries.map(recipient => <p className="helped"><strong>{recipient.firstName} {recipient.lastName}</strong> - NGN {recipient.amtRecvd} ~~~~~<a href={`tel:${recipient.phone}`}>(Let them know it was you?)</a></p>)}
                     </div>
-
+                    <br/>
                     <Button type="primary" link="/">Go Home</Button>
-                    <p>Share with your network!</p>
+                    <p>Share your donation story!</p>
                     <SocialShare
-                        text={"I just donated to some people who have been impacted by COVID-19. You can use this to get a randomly-generated list of three people who need your help."}
+                        text={`I've just donated ${donation.amount} to people who've been economically affected by COVID-19. You can, too, by visiting https://angelsamong.us. We can win!`}
                         url={window.location.origin}
                         tag={"#AngelsAmongUs"}
                     />

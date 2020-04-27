@@ -7,7 +7,6 @@ import Donation from './Donation/Donation';
 
 function Home() {
   const [visible, setvisible] = useState(true)
- 
   const [users, setusers] = useState(null);
   const apiURL = `${process.env.REACT_APP_ANGELSAPIBASE}/randomize-people`
 
@@ -38,6 +37,7 @@ function Home() {
                 Consider sending money to each person on the list (eg. N2,000 to three people is N6,000). This is a great way to ensure we reach as many people as possible, as uniformly as possible.
               </p>
               <p><a href="/faq#verify">See how we verify identities of people in need</a></p>
+              <p><a href="https://angelsamong.us">^Back home</a></p>
             </TextCenter>
           </Fragment>
           :
@@ -58,7 +58,7 @@ function Home() {
             <div>
               {!users ? <Loader className="Loader"
                 type="BallTriangle"
-                color="#008000"
+                color="#FF4444"
                 height={40}
                 width={40}
               /> : null}

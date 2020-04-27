@@ -1,0 +1,23 @@
+h1{
+    color: rgb(107, 186, 107);
+    font-size: 25px;
+}
+
+p {
+    line-height: 1.1;
+    padding: 5px 0px;
+}
+
+.helped{
+    background: #FFDDB5;
+    padding: 5px;
+    padding-left: 30px;
+}
+
+p.helped{
+    margin: 6px;
+}
+
+h2{
+    font-weight: 500;
+}

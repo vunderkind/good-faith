@@ -21,7 +21,7 @@ body {
   font-family: var(--secondary-font);
   margin: 0;
   scroll-behavior: smooth;
-  background: #FFF;
+  background: #fff;
   background-image: radial-gradient(rgb(0, 0, 0) 2.5%, transparent 0);
   background-size: 20px 20px;
 }
