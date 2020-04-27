@@ -12,7 +12,7 @@ function DonationStatus() {
     const [donation, setDonation] = useState(false)
 
     useEffect(() => {
-        const validateUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations/status";
+        const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
         axios.post(validateUrl, {reference: ref})
             .then(apiResponse => {
                 if( apiResponse.status === 200 ){

@@ -25,7 +25,7 @@ function Donation( props ) {
 
         // populate subaccounts with ratio
         const subaccounts = packageRecipientSubAccounts();
-        const flw_publickey = "FLWPUBK_TEST-4aa027b074b35d7017de3e8141784280-X"; // TODO: use env
+        const flw_publickey = process.env.REACT_APP_FLWPUBLICKEY;
 
         // generate configuration values for rave
         let flw_config = {
@@ -35,7 +35,7 @@ function Donation( props ) {
             currency: "NGN",
             txref: txnRef,
             subaccounts: subaccounts,
-            production: false, // TOOD: use env seperate PR
+            production: process.env.REACT_APP_ISPROD === "TRUE" ? true : false,
         }
         setRaveConfig(flw_config);
     }
@@ -46,7 +46,7 @@ function Donation( props ) {
      * Redirect the user to a status page if donation is successful!
      */
     async function validateDonation(){
-        const validateUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations/status";
+        const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
 
         const apiResponse = await axios.post(validateUrl, {reference: donationRef});
 
@@ -114,12 +114,14 @@ function Donation( props ) {
      * 
      */
     async function getTransactionReference() {
-        if ( (parseInt(donationAmount) || 0) <= 0 ) { //TODO: make this configurable
-            alert("Please enter a valid donation amount in Naira");
+        if ( (parseInt(donationAmount) || 0) <= 1000 ) {
+            let message = "Please enter a valid donation amount of at least NGN 1000.\n"
+            message += "Because we split the donation amount evenly among recipients, we want to make sure our recipients get substantial amounts too\n"
+            alert(message);
             return null;
         }
-        // TODO: move to env
-        const donationApiUrl = "https://good-faith-staging.herokuapp.com/api/v1/donations";
+
+        const donationApiUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations`;
 
         const beneficiaryIds = getBeneficiaryIds(); 
 

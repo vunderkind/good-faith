@@ -9,7 +9,7 @@ function Home() {
   const [visible, setvisible] = useState(true)
  
   const [users, setusers] = useState(null);
-  const apiURL = `https://good-faith-staging.herokuapp.com/api/v1/randomize-people`
+  const apiURL = `${process.env.REACT_APP_ANGELSAPIBASE}/randomize-people`
 
   function fetchusers() {
     fetch(apiURL)
