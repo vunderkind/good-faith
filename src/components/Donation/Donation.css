@@ -20,12 +20,6 @@
     margin-top: 20px;
 }
 
-.donation-amount-input {
-    border: 3px inset #ccc;
-}
-.donation-amount-input input {
-    border: 0;
-}
 
 .abort-button {
     margin-right: 10px;
@@ -33,4 +27,16 @@
 
 .black {
     background-color: #333333;
+}
+
+.Input {
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 35px;
+    margin: 15px auto 5px;
+}
+
+.Button .Input {
+    text-align: center;
 }

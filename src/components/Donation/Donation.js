@@ -158,9 +158,7 @@ function Donation( props ) {
                     <label className="donation-input-section">
                         <p>How much in Naira do you want to donate?<br/>
                         The amount will be split equally among recipients listed below.</p>
-                        <span className="donation-amount-input">
-                            ₦<input type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)}></input>
-                        </span>
+                        <input className="Input" type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)} placeholder="5000"></input>
                     </label>
 
                     <label className="donation-input-section">
@@ -175,7 +173,8 @@ function Donation( props ) {
                             <input type="email"
                             pattern="[^ @]*@[^ @]*"
                             name="donorEmail"
-                            onChange={event => setDonorEmail(event.target.value)}></input>
+                            placeholder="donor@angelamoung.us"
+                            onChange={event => setDonorEmail(event.target.value)} className="Input"></input>
                         </label>
                     : null
                     }
