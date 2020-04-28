@@ -1,7 +1,6 @@
 import React from 'react';
-import "./Popup.css"
-
-
+import "./Popup.css";
+import Button from '../Button/Button'
 
 function Popup(props){
       return (
@@ -9,7 +8,12 @@ function Popup(props){
           <div className='popup_inner'>
             <h1>{props.headline}</h1>
             <p>{props.summary}</p>
-          <button onClick={props.closePopup}>Dismiss</button>
+            {props.context? <p><a href={props.context}>More details</a></p>: null}
+            <br/>
+          <Button type="primary" 
+          onClick={props.closePopup}>
+              Dismiss
+              </Button>
           </div>
         </div>
       );

@@ -4,8 +4,12 @@ h1{
 }
 
 p {
-    line-height: 1.1;
+    line-height: 1.2;
     padding: 5px 0px;
+}
+
+#subdued{
+    color: gray;
 }
 
 .helped{

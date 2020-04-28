@@ -8,17 +8,20 @@ import Button from '../utilities/Button/Button';
 import SocialShare from '../SocialShare/SocialShare';
 import Popup from '../utilities/Popup/Popup';
 
+
 function DonationStatus() {
     let { ref } = useParams();
     const [donation, setDonation] = useState(false)
     const [showPopup, setshowPopup] = useState(false)
-    const togglePopup = () => {
-        setshowPopup({
-          showPopup: !showPopup
-        });
+    const [showPopup2, setshowPopup2] = useState(false)
+    function togglePopup() {
+        setshowPopup(!showPopup);
       }
-
-      console.log(showPopup)
+      function togglePopup2() {
+        setshowPopup2(!showPopup2);
+      }
+    
+    
 
     useEffect(() => {
         const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
@@ -45,13 +48,22 @@ function DonationStatus() {
                     <p>Thank you for donating, {donation.donorName? donation.donorName: 'Anonymous Angel'}! Here's your donation summary</p>
                     <h1>Donation Status: {donation.status}</h1>
                     <p>Reference: {donation.reference}</p>
+                    <p id="subdued">(Please note that it may take some time for your donation to reflect in the recipient's account.)</p>
 
                     <p><strong>You donated:</strong> NGN {donation.amount}</p>
-                    <p><strong>Payment Processor Fee: </strong>NGN {donation.fee}<br/><a href="https://flutterwave.com/us/pricing">(About this)</a></p> 
+                    <p><strong>Payment Processor Fee: </strong>NGN {donation.fee}</p>
+                    <Button type="secondary"
+                    onClick={togglePopup2}>
+                        Details
+                    </Button>
 
                     {
                     donation.cbnstampdutycharge ?
-                    <p><strong>CBN Stamp Duty Charge:</strong> NGN {donation.cbnstampdutycharge}<br/><button onClick={togglePopup}>(Details)</button></p> : null
+                    <p><strong>CBN Stamp Duty Charge:</strong> NGN {donation.cbnstampdutycharge}
+                    <Button type="secondary" onClick={togglePopup}>
+                        Details
+                        </Button>
+                        </p> : null
                     }
                     <br/>
                     <hr/>
@@ -68,7 +80,18 @@ function DonationStatus() {
                         url={window.location.origin}
                         tag={"#AngelsAmongUs"}
                     />
-                    {showPopup ? <Popup headline='Close Me'summary='Something'closePopup={togglePopup}/>
+                    {showPopup ? <Popup headline='About the N50 CBN Stamp Duty'
+                    summary='On September 17th, 2019, the Central Bank of Nigeria released a circular mandating a stamp duty fee of N50 on every transfer done by Nigerians worth N1000 or more.'
+                    closePopup={togglePopup}
+                    context='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'
+                    />
+                        : null}
+
+                    {showPopup2 ? <Popup headline="Flutterwave's processing fees"
+                    summary="Flutterwave charges a 2.9% processing fee for local transfers, and 3.8% for international transfers. Click the 'More details' link to read more about how Flutterwave's pricing works."
+                    closePopup={togglePopup2}
+                    context='https://flutterwave.com/us/pricing'
+                    />
                         : null}
                   </TextCenter>
               </Fragment>}

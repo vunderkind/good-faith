@@ -10,6 +10,7 @@
     background-color: rgba(0, 148, 228, 0.5);
   }
   .popup_inner {
+    padding: 30px;
     position: absolute;
     left: 25%;
     right: 25%;
@@ -19,6 +20,7 @@
     margin: auto;
     background: white;
   }
+
 
   @media only screen and (max-width:600px){
     .popup_inner{
