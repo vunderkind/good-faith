@@ -17,7 +17,8 @@ function DonationStatus() {
           showPopup: !showPopup
         });
       }
-    
+
+      console.log(showPopup)
 
     useEffect(() => {
         const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
@@ -67,14 +68,8 @@ function DonationStatus() {
                         url={window.location.origin}
                         tag={"#AngelsAmongUs"}
                     />
-                    {showPopup ? 
-                    <Popup
-                        headline='Close Me'
-                        summary='Something'
-                        closePopup={togglePopup}
-                    />
-                        : null
-                    }
+                    {showPopup ? <Popup headline='Close Me'summary='Something'closePopup={togglePopup}/>
+                        : null}
                   </TextCenter>
               </Fragment>}
         </div>

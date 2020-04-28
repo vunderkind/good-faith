@@ -10,16 +10,11 @@ function Donation( props ) {
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
     const [donorName, setdonorName] = useState('')
-    const [showPopup, setshowPopup] = useState(false)
     const [isAnon, setIsAnon] = useState(true)
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
 
-    function togglePopup() {
-        setshowPopup({
-          showPopup: !showPopup
-        });
-      }
+    
 
     async function initiateDonation(event) {
         event.preventDefault();
