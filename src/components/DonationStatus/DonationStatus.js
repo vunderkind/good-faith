@@ -51,11 +51,11 @@ function DonationStatus() {
                     <p id="subdued">(Please note that it may take some time for your donation to reflect in the recipient's account.)</p>
 
                     <p><strong>You donated:</strong> NGN {donation.amount}</p>
-                    <p><strong>Payment Processor Fee: </strong>NGN {donation.fee}</p>
+                    <p><strong>Payment Processor Fee: </strong>NGN {donation.fee}
                     <Button type="secondary"
                     onClick={togglePopup2}>
                         Details
-                    </Button>
+                    </Button></p>
 
                     {
                     donation.cbnstampdutycharge ?
