@@ -76,7 +76,7 @@ function DonationStatus() {
                     <Button type="primary" link="/">Go Home</Button>
                     <p>Share your donation story!</p>
                     <SocialShare
-                        text={`I've just donated ${donation.amount} to people who've been economically affected by COVID-19. You can, too, by visiting https://angelsamong.us. We can win!`}
+                        text={`I've just donated ${donation.amount} to people who've been economically affected by COVID-19. You can, too, by visiting https://angelsamong.us. Anyone can be an angel!`}
                         url={window.location.origin}
                         tag={"#AngelsAmongUs"}
                     />
