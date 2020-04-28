@@ -9,6 +9,7 @@ function Donation( props ) {
 
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
+    const [donorName, setdonorName] = useState('')
     const [isAnon, setIsAnon] = useState(true)
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
@@ -56,8 +57,8 @@ function Donation( props ) {
             alert(error_message);
             handlePostDonation();
         } else if( apiResponse.data.status !== "SUCCESS" ) {
-            let error_message = "Donation attempt unsuccessful\n";
-            error_message += `To dispute this, Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            let error_message = "Your donation was unsuccessful!\n";
+            error_message += `To dispute this, Please reach out to angelsamongusbot@gmail.com with reference number:${donationRef}`;
             alert(error_message);
             handlePostDonation();
         } else{
@@ -114,8 +115,14 @@ function Donation( props ) {
      * 
      */
     async function getTransactionReference() {
-        if ( (parseInt(donationAmount) || 0) <= 4999 ) {
-            let message = "This feature works best if you donate at least N5000.\n"
+        if(!(parseInt(donationAmount))){
+            let message = "Sorry - looks like you didn't put in a donation amount.\n"
+            alert(message);
+            return null;
+        }
+
+        else if ( (parseInt(donationAmount)) <= 999 ) {
+            let message = "This feature works best if you donate at least N1000.\n"
             message += "This is because we split your donation evenly among 5 recipients. \n"
             alert(message);
             return null;
@@ -127,6 +134,7 @@ function Donation( props ) {
 
         const body = {
             "donor": donorEmail,
+            "donorName": donorName,
             "amount": donationAmount,
             "beneficiary_ids": beneficiaryIds,
             "source": "FLUTTERWAVE"
@@ -160,6 +168,7 @@ function Donation( props ) {
                         <h2>How much (in Naira) do you want to donate?</h2>
                         <p>The amount will be split equally between the recipients listed below.</p>
                         <input className="Input" type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)} placeholder="5000"></input>
+                        
                     </label>
 
                     <label className="donation-input-section">
@@ -167,15 +176,23 @@ function Donation( props ) {
                         <input type="checkbox" 
                         onChange={event => setIsAnon(event.target.checked ? false : true)}></input>
                     </label>
-
+                    <br/>
                     {!isAnon ?
                         <label className="donation-input-section">
+                            <input className="Input" 
+                            type='text' 
+                            name="donorName" 
+                            onChange={event => setdonorName(event.target.value)} 
+                            placeholder="Your name"></input>
+
                             <p>Email address</p>
                             <input type="email"
                             pattern="[^ @]*@[^ @]*"
                             name="donorEmail"
-                            placeholder="donor@angelsamong.us"
+                            placeholder="Your email address"
                             onChange={event => setDonorEmail(event.target.value)} className="Input"></input>
+                            
+                            
                         </label>
                     : null
                     }

@@ -49,7 +49,7 @@ function DonationStatus() {
                     <hr/>
                     <div>
                         <h2>You've just helped:</h2>
-                        {donation.beneficiaries.map(recipient => <p className="helped"><strong>{recipient.firstName} {recipient.lastName}</strong> - NGN {recipient.amtRecvd} ~~~~~<a href={`tel:${recipient.phone}`}>(Let them know it was you?)</a></p>)}
+                        {donation.beneficiaries.map(recipient => <p className="helped"><strong>{recipient.firstName} {recipient.lastName}</strong> - NGN {recipient.amtRecvd} ~~~~~<a href={`sms:${recipient.phone}?&body=Hey ${recipient.firstName}! My name is XXX, and I just made a donation to you via Angels Among Us. Stay healthy and keep your spirits up as we work to beat COVID-19!`}>Send ${recipient.firstName} an SMS?</a></p>)}
                     </div>
                     <br/>
                     <Button type="primary" link="/">Go Home</Button>
