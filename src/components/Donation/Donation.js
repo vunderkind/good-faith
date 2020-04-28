@@ -10,9 +10,16 @@ function Donation( props ) {
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
     const [donorName, setdonorName] = useState('')
+    const [showPopup, setshowPopup] = useState(false)
     const [isAnon, setIsAnon] = useState(true)
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
+
+    function togglePopup() {
+        setshowPopup({
+          showPopup: !showPopup
+        });
+      }
 
     async function initiateDonation(event) {
         event.preventDefault();
@@ -52,8 +59,8 @@ function Donation( props ) {
         const apiResponse = await axios.post(validateUrl, {reference: donationRef});
 
         if( !apiResponse || apiResponse.status !== 200 ) {
-            let error_message = "Sorry an error occured processing your donation.\n";
-            error_message += `Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            let error_message = "Sorry - an error occured processing your donation.\n";
+            error_message += `Please reach out to angelsamongusbot@gmail.com with reference:${donationRef}`;
             alert(error_message);
             handlePostDonation();
         } else if( apiResponse.data.status !== "SUCCESS" ) {
@@ -133,7 +140,7 @@ function Donation( props ) {
         const beneficiaryIds = getBeneficiaryIds(); 
 
         const body = {
-            "donor": donorEmail,
+            "donorEmail": donorEmail,
             "donorName": donorName,
             "amount": donationAmount,
             "beneficiary_ids": beneficiaryIds,
@@ -172,7 +179,7 @@ function Donation( props ) {
                     </label>
 
                     <label className="donation-input-section">
-                        <p>Share your email?</p>
+                        <p>Share your details?</p>
                         <input type="checkbox" 
                         onChange={event => setIsAnon(event.target.checked ? false : true)}></input>
                     </label>

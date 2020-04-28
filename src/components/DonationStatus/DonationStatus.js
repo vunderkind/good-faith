@@ -6,10 +6,18 @@ import './DonationStatus.css';
 import TextCenter from '../utilities/TextCenter/TextCenter';
 import Button from '../utilities/Button/Button';
 import SocialShare from '../SocialShare/SocialShare';
+import Popup from '../utilities/Popup/Popup';
 
 function DonationStatus() {
     let { ref } = useParams();
     const [donation, setDonation] = useState(false)
+    const [showPopup, setshowPopup] = useState(false)
+    const togglePopup = () => {
+        setshowPopup({
+          showPopup: !showPopup
+        });
+      }
+    
 
     useEffect(() => {
         const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
@@ -22,7 +30,6 @@ function DonationStatus() {
                 window.location.href = `/`;
             })
     }, [ref])
-
     return (
         <div className="App">
             {!donation ? <Loader className="Loader"
@@ -34,7 +41,7 @@ function DonationStatus() {
               <Fragment>
                   <TextCenter>
                     <hr />
-                    <p>Thank you for donating! Here's your donation summary</p>
+                    <p>Thank you for donating, {donation.donorName? donation.donorName: 'Anonymous Angel'}! Here's your donation summary</p>
                     <h1>Donation Status: {donation.status}</h1>
                     <p>Reference: {donation.reference}</p>
 
@@ -43,13 +50,14 @@ function DonationStatus() {
 
                     {
                     donation.cbnstampdutycharge ?
-                    <p><strong>CBN Stamp Duty Charge:</strong> NGN {donation.cbnstampdutycharge}<br/><a href='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'>(Details)</a></p> : null
+                    <p><strong>CBN Stamp Duty Charge:</strong> NGN {donation.cbnstampdutycharge}<br/><button onClick={togglePopup}>(Details)</button></p> : null
                     }
                     <br/>
                     <hr/>
                     <div>
                         <h2>You've just helped:</h2>
-                        {donation.beneficiaries.map(recipient => <p className="helped"><strong>{recipient.firstName} {recipient.lastName}</strong> - NGN {recipient.amtRecvd} ~~~~~<a href={`sms:${recipient.phone}?&body=Hey ${recipient.firstName}! My name is XXX, and I just made a donation to you via Angels Among Us. Stay healthy and keep your spirits up as we work to beat COVID-19!`}>Send ${recipient.firstName} an SMS?</a></p>)}
+                        {donation.beneficiaries.map(recipient => <p className="helped"><strong>{recipient.firstName} {recipient.lastName}</strong> - NGN {recipient.amtRecvd} ~~~~~<a href={`sms:${recipient.phone}?&body=Hey ${recipient.firstName}! My name is ${donation.donorName? donation.donorName: 'Anon'}, and I just made a donation to you via Angels Among Us. Stay healthy and keep your spirits up as we work to beat COVID-19!`}>Send {recipient.firstName} an SMS?</a></p>)}
+                        
                     </div>
                     <br/>
                     <Button type="primary" link="/">Go Home</Button>
@@ -59,7 +67,14 @@ function DonationStatus() {
                         url={window.location.origin}
                         tag={"#AngelsAmongUs"}
                     />
-
+                    {showPopup ? 
+                    <Popup
+                        headline='Close Me'
+                        summary='Something'
+                        closePopup={togglePopup}
+                    />
+                        : null
+                    }
                   </TextCenter>
               </Fragment>}
         </div>
