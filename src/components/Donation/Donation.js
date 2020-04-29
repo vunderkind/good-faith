@@ -200,6 +200,7 @@ function Donation( props ) {
                     <br/>
                     {!isAnon ?
                         <label className="donation-input-section">
+                            <p>Name</p>
                             <input className="Input" 
                             type='text' 
                             name="donorName" 
