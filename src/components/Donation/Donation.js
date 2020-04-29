@@ -49,7 +49,7 @@ function Donation( props ) {
      * Redirect the user to a status page if donation is successful!
      */
     async function validateDonation(){
-        const validateUrl = `http://localhost:5000/donations/status`;
+        const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
 
         try {
             const apiResponse = await axios.post(validateUrl, {reference: donationRef});
