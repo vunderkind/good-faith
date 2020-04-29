@@ -7,9 +7,17 @@ import './Header.css'
 function Header() {
     return (
         <Fragment>
-            <div className="Linq">
-                <NavLink exact activeClassName="active" className="Link" id="home" to='/'>Angels Among <span className="redden">Us</span></NavLink>
+            <div className="HeaderLinks">
+                <NavLink exact className="Link active" id="home" to='/'>Angels Among <span className="redden">Us</span></NavLink>
+
+                <div className="HeaderLinks-SubLinks">
+                    <NavLink activeClassName="active" className="Link" to='/about'>About</NavLink>
+                    <NavLink activeClassName="active" className="Link" to='/faq'>FAQ</NavLink>
+                    <NavLink activeClassName="active" className="Link" to='/needhelp'>Need help</NavLink>
+                    <NavLink activeClassName="active" className="Link" to='/team'>Team</NavLink>
+                </div>
             </div>
+
 
             <TextCenter>
                 <p>Share <strong>Angels Among Us</strong> with your network!</p>
