@@ -49,7 +49,7 @@ function Donation( props ) {
      * Redirect the user to a status page if donation is successful!
      */
     async function validateDonation(){
-        const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
+        const validateUrl = `http://localhost:5000/donations/status`;
 
         try {
             const apiResponse = await axios.post(validateUrl, {reference: donationRef});
@@ -145,7 +145,7 @@ function Donation( props ) {
 
         const body = {
             "donorEmail": donorEmail,
-            "donorName": donorName,
+            "donorName": !!donorName.trim() ? donorName : "Anon",
             "amount": donationAmount,
             "beneficiary_ids": beneficiaryIds,
             "source": "FLUTTERWAVE"
