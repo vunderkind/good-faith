@@ -14,7 +14,7 @@ const NeedHelp = () => {
             <h2>Notes</h2>
             <ul>
                 <li>When you're helped, consider paying it forward: share with someone in your neighborhood who could use the help, or come back to angelsamong.us and give back to a random set of people.</li><br />
-                <li>If you've been sufficiently helped, send an email to thevunderkind@gmail.com so we can remove your name from the database. This is so other people can be helped as well!</li>
+                <li>If you've been sufficiently helped, send an email to angelsamongusbot@gmail.com so we can remove your name from the database. This is so other people can be helped as well!</li>
             </ul>
 
             <TextCenter>

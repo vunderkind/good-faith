@@ -15,10 +15,10 @@ const About = () => {
             <h1>I need help</h1>
             <p>Click the 'I need help' button on the homepage and let people know just what you need</p>
             <p>This is a good faith project: it works because honest people want to help honest people in need.</p>
-            <p>If your financial needs have been met, send us an email <a href="mailto:thevunderkind@gmail.com">here</a> so we can take out your name. This is important so other people in need are likelier to be helped.</p>
+            <p>If your financial needs have been met, send us an email <a href="mailto:angelsamongusbot@gmail.com">here</a> so we can take out your name. This is important so other people in need are likelier to be helped.</p>
             <br/>
             <h1>Other forms of support</h1>
-            <p>If you're a dev looking to add features to make this project better, shoot us an email <a href="mailto:thevunderkind@gmail.com">here</a>. If you want to lend your support as a comms expert to handle social media and/other ways of reaching out to people who need help and donors alike, also send us an email!</p>
+            <p>If you're a dev looking to add features to make this project better, shoot us an email <a href="mailto:angelsamongusbot@gmail.com">here</a>. If you want to lend your support as a comms expert to handle social media and/other ways of reaching out to people who need help and donors alike, also send us an email!</p>
             <br/>
             <TextCenter>
                 <p><a href="/">^Back home</a></p>

@@ -12,7 +12,7 @@ function UserCard(props) {
     
     let user = props.user;
     function getAccountErrorEmailHref(user) {
-        return ("mailto:thevunderkind@gmail.com?subject=Problem with account on angelsamong.us&body=Hello, I had a problem transferring to " + user.accountNumber + ", " + user.bankName);
+        return ("mailto:angelsamongusbot@gmail.com?subject=Problem with account on angelsamong.us&body=Hello, I had a problem transferring to " + user.accountNumber + ", " + user.bankName);
     }
 
     return (
