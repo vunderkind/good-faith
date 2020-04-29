@@ -81,7 +81,7 @@ function DonationStatus() {
                         tag={"#AngelsAmongUs"}
                     />
                     {showPopup ? <Popup headline='About the N50 CBN Stamp Duty'
-                    summary='On September 17th, 2019, the Central Bank of Nigeria released a circular mandating a stamp duty fee of N50 on every transfer done by Nigerians worth N1000 or more.'
+                    summary='On September 17th, 2019, the Central Bank of Nigeria released a circular mandating a stamp duty fee of N50 on every transfer worth N1000 or more.'
                     closePopup={togglePopup}
                     context='https://flutterwave.com/us/blog/product-updates/cbns-stamp-duty-charge-a-flutterwave-merchants-guide'
                     />

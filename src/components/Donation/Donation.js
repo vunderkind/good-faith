@@ -9,7 +9,7 @@ function Donation( props ) {
 
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
-    const [donorName, setdonorName] = useState('')
+    const [donorName, setdonorName] = useState('Anon')
     const [isAnon, setIsAnon] = useState(true)
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
