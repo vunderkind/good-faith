@@ -134,6 +134,11 @@ const Team = () => {
                     </div>
                 ))}
             </div>
+
+            <TextCenter>
+                <p><a href="https://angelsamong.us">^Back home</a></p>
+            </TextCenter>
+
         </div>
     )
 }

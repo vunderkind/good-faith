@@ -34,10 +34,12 @@ function Home() {
                 When you click the 'Be an angel' button, you'll get a random list of <span>three</span> people you can contribute to.
               </p>
               <p>
-                Consider sending money to each person on the list (eg. N2,000 to three people is N6,000). This is a great way to ensure we reach as many people as possible, as uniformly as possible.
+                You can donate directly to people via the platform or manually by sending money to their listed account details.
+              </p>
+              <p>
+                If donatinng manually, consider sending money to each person on the list (eg. N2,000 to three people is N6,000). This is a great way to ensure we reach as many people as possible, as uniformly as possible.
               </p>
               <p><a href="/faq#verify">See how we verify identities of people in need</a></p>
-              <p><a href="https://angelsamong.us">^Back home</a></p>
             </TextCenter>
           </Fragment>
           :
