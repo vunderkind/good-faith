@@ -9,9 +9,12 @@ function Donation( props ) {
 
     const [donationAmount, setDonationAmount] = useState(0)
     const [donorEmail, setDonorEmail] = useState(getRandomEmail)
+    const [donorName, setdonorName] = useState('Anon')
     const [isAnon, setIsAnon] = useState(true)
     const [raveConfig, setRaveConfig] = useState(false);
     const [donationRef, setDonationRef] = useState("");
+
+    
 
     async function initiateDonation(event) {
         event.preventDefault();
@@ -51,13 +54,13 @@ function Donation( props ) {
         const apiResponse = await axios.post(validateUrl, {reference: donationRef});
 
         if( !apiResponse || apiResponse.status !== 200 ) {
-            let error_message = "Sorry an error occured processing your donation.\n";
-            error_message += `Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            let error_message = "Sorry - an error occured processing your donation.\n";
+            error_message += `Please reach out to angelsamongusbot@gmail.com with reference:${donationRef}`;
             alert(error_message);
             handlePostDonation();
         } else if( apiResponse.data.status !== "SUCCESS" ) {
-            let error_message = "Donation attempt unsuccessful\n";
-            error_message += `To dispute this, Please reach out to angelsamongus@gmail.com with reference:${donationRef}`;
+            let error_message = "Your donation was unsuccessful!\n";
+            error_message += `To dispute this, Please reach out to angelsamongusbot@gmail.com with reference number:${donationRef}`;
             alert(error_message);
             handlePostDonation();
         } else{
@@ -114,9 +117,15 @@ function Donation( props ) {
      * 
      */
     async function getTransactionReference() {
-        if ( (parseInt(donationAmount) || 0) <= 1000 ) {
-            let message = "Please enter a valid donation amount of at least NGN 1000.\n"
-            message += "Because we split the donation amount evenly among recipients, we want to make sure our recipients get substantial amounts too\n"
+        if(!(parseInt(donationAmount))){
+            let message = "Sorry - looks like you didn't put in a donation amount.\n"
+            alert(message);
+            return null;
+        }
+
+        else if ( (parseInt(donationAmount)) <= 999 ) {
+            let message = "This feature works best if you donate at least N1000.\n"
+            message += "This is because we split your donation evenly among 5 recipients. \n"
             alert(message);
             return null;
         }
@@ -126,7 +135,8 @@ function Donation( props ) {
         const beneficiaryIds = getBeneficiaryIds(); 
 
         const body = {
-            "donor": donorEmail,
+            "donorEmail": donorEmail,
+            "donorName": donorName,
             "amount": donationAmount,
             "beneficiary_ids": beneficiaryIds,
             "source": "FLUTTERWAVE"
@@ -154,27 +164,37 @@ function Donation( props ) {
     return (
         <div className="Donation">
             <TextCenter>
+                <div className="featurebanner"><strong>New:</strong> Easy donate feature! 👇🏿</div>
                 <form onSubmit={initiateDonation}>
                     <label className="donation-input-section">
-                        <p>How much in Naira do you want to donate?<br/>
-                        The amount will be split equally among recipients listed below.</p>
+                        <h2>How much (in Naira) do you want to donate?</h2>
+                        <p>The amount will be split equally between the recipients listed below.</p>
                         <input className="Input" type='number' name="donationAmount" onChange={event => setDonationAmount(event.target.value)} placeholder="5000"></input>
+                        
                     </label>
 
                     <label className="donation-input-section">
-                        <p>Share email?</p>
+                        <p>Share your details?</p>
                         <input type="checkbox" 
                         onChange={event => setIsAnon(event.target.checked ? false : true)}></input>
                     </label>
-
+                    <br/>
                     {!isAnon ?
                         <label className="donation-input-section">
+                            <input className="Input" 
+                            type='text' 
+                            name="donorName" 
+                            onChange={event => setdonorName(event.target.value)} 
+                            placeholder="Your name"></input>
+
                             <p>Email address</p>
                             <input type="email"
                             pattern="[^ @]*@[^ @]*"
                             name="donorEmail"
-                            placeholder="donor@angelamoung.us"
+                            placeholder="Your email address"
                             onChange={event => setDonorEmail(event.target.value)} className="Input"></input>
+                            
+                            
                         </label>
                     : null
                     }
@@ -192,7 +212,7 @@ function Donation( props ) {
             {!raveConfig ? null
             : 
             <div className="pay-section">
-                <button className="btn btn-danger abort-button" onClick={event => setRaveConfig(false)}>Abort</button>
+                <button className="btn btn-danger abort-button" onClick={event => setRaveConfig(false)}>Cancel</button>
 
                 <Payment config={raveConfig} triggerValidation={validateDonation} afterClose={validateDonation}></Payment>
             </div> 

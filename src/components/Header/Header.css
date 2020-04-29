@@ -1,12 +1,21 @@
 .Linq {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0 25px 40px;
     height: 40px;
     box-shadow: var(--shadow);
+    background: white;
 }
 
+.active {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.redden{
+    color: #ff4444;
+}
 .Linq a {
     text-decoration: none;
     border-bottom: none;
@@ -18,8 +27,4 @@
     background-color: transparent;
     color: initial;
     padding: 5px;
-}
-
-.Linq a.active {
-    border-bottom: 3px solid var(--primary-color);
 }

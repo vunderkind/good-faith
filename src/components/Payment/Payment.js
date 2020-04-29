@@ -11,7 +11,7 @@ const Payment = ({ config, triggerValidation, afterClose}) => {
         <TextCenter>
             <button className="btn btn-primary flw-accent" onClick={() => {
                 initializePayment(triggerValidation, afterClose)
-            }}>Pay with Flutterwave</button>
+            }}>Give with Flutterwave</button>
         </TextCenter>
     )
 
