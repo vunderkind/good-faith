@@ -51,21 +51,30 @@ function Donation( props ) {
     async function validateDonation(){
         const validateUrl = `${process.env.REACT_APP_ANGELSAPIBASE}/donations/status`;
 
-        const apiResponse = await axios.post(validateUrl, {reference: donationRef});
+        try {
+            const apiResponse = await axios.post(validateUrl, {reference: donationRef});
 
-        if( !apiResponse || apiResponse.status !== 200 ) {
-            let error_message = "Sorry - an error occured processing your donation.\n";
-            error_message += `Please reach out to angelsamongusbot@gmail.com with reference:${donationRef}`;
-            alert(error_message);
+            if( !apiResponse || apiResponse.status !== 200 ) {
+                let error_message = "Sorry - an error occured processing your donation.\n";
+                error_message += `Please reach out to angelsamongusbot@gmail.com with reference:${donationRef}`;
+                alert(error_message);
+                handlePostDonation();
+            } else if( apiResponse.data.status !== "SUCCESS" ) {
+                let error_message = "Your donation one-click donation attempt was unsuccessful!\n";
+                error_message += `To dispute this, Please reach out to angelsamongusbot@gmail.com with reference number:${donationRef}`;
+                alert(error_message);
+                handlePostDonation();
+            } else{
+                // if payment is successful, send the user to donation page
+                window.location.href = `/donations/${donationRef}`;
+            }
+        } catch (error) {
+
+            let api_error_message = "Sorry, there was an error validating your donation\n"
+            api_error_message += `Please reach out to angelsamongusbot@gmail.com with reference:${donationRef}\n`
+            alert(api_error_message);
             handlePostDonation();
-        } else if( apiResponse.data.status !== "SUCCESS" ) {
-            let error_message = "Your donation was unsuccessful!\n";
-            error_message += `To dispute this, Please reach out to angelsamongusbot@gmail.com with reference number:${donationRef}`;
-            alert(error_message);
-            handlePostDonation();
-        } else{
-            // if payment is successful, send the user to donation page
-            window.location.href = `/donations/${donationRef}`;
+
         }
     }
 
@@ -142,13 +151,23 @@ function Donation( props ) {
             "source": "FLUTTERWAVE"
         }
 
-        const apiResponse = await axios.post( donationApiUrl, body );
-        if( apiResponse.status !== 200 ) {
+        let api_error_message = "Sorry, there was an error processing your request\n"
+        api_error_message += "Please reach out to angelsamongusbot@gmail.com if this persists. Thanks! \n"
+
+        try {
+            const apiResponse = await axios.post( donationApiUrl, body );
+
+            if( apiResponse.status !== 200 ) {
+                alert(api_error_message);
+                return null;
+            }
+
+            const donationRef = apiResponse.data.reference;
+            return donationRef;
+        } catch(error) {
+            alert(api_error_message);
             return null;
         }
-        const donationRef = apiResponse.data.reference;
-
-        return donationRef;
     }
 
     /**
