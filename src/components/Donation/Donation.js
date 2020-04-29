@@ -183,7 +183,7 @@ function Donation( props ) {
     return (
         <div className="Donation">
             <TextCenter>
-                <div className="featurebanner"><strong>New:</strong> Easy donate feature! 👇🏿</div>
+                <div className="featurebanner"><strong>New:</strong> Easy donate feature! <span role="img" aria-label="hand pointing downwards">👇🏿</span></div>
                 <form onSubmit={initiateDonation}>
                     <label className="donation-input-section">
                         <h2>How much (in Naira) do you want to donate?</h2>
