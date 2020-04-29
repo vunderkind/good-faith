@@ -36,7 +36,7 @@ const FAQ = () => {
             <p><a href="mailto:thevunderkind@gmail.com">Email Justin.</a></p>
 
             <TextCenter>
-                <p><a href="https://angelsamong.us">^Back home</a></p>
+                <p><a href="/">^Back home</a></p>
             </TextCenter>
 
         </div>

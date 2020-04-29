@@ -18,7 +18,7 @@ const NeedHelp = () => {
             </ul>
 
             <TextCenter>
-                <p><a href="https://angelsamong.us">^Back home</a></p>
+                <p><a href="/">^Back home</a></p>
             </TextCenter>
 
         </div>
