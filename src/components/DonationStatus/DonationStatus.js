@@ -88,9 +88,9 @@ function DonationStatus() {
                         : null}
 
                     {showPopup2 ? <Popup headline="Flutterwave's processing fees"
-                    summary="Flutterwave charges a 2.9% processing fee for local transfers, and 3.8% for international transfers. Click the 'More details' link to read more about how Flutterwave's pricing works."
+                    summary="Flutterwave charges a 1.4% processing fee for local transfers, and 3.8% for international transfers. Click the 'More details' link to read more about how Flutterwave's pricing works."
                     closePopup={togglePopup2}
-                    context='https://flutterwave.com/us/pricing'
+                    context='https://flutterwave.com/ng/pricing'
                     />
                         : null}
                   </TextCenter>
