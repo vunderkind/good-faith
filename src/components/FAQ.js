@@ -1,4 +1,5 @@
 import React from 'react'
+import TextCenter from './utilities/TextCenter/TextCenter'
 
 const FAQ = () => {
     return (
@@ -24,19 +25,19 @@ const FAQ = () => {
             <h2>Who made this?</h2>
             <p>Justin Irabor. He is now supported by a brilliant volunteer network of <a href="/team">software engineers and community managers</a>.</p>
 
+            <h2>What’s new on Angels Among Us?</h2>
+            <p>A lot! We have revamped our donation experience to optionally allow users donate to multiple people at once! We'll keep working to improve the experience with regular updates.</p>
+
             <h2>How do you know when a person has been ‘sufficiently’ helped?</h2>
-            <p>At the moment, because we don't play an intermediary role between donor and recipient, we have no idea when anyone has been sent money - so we do the next best thing: every five days, we’ll refresh the database by removing the oldest names in the list to increase the chances of new entrants to be helped.</p>
+            <p>With the introduction of our new donation experience and <i>'I donated!'</i> option, we're able to automatically tell how much help each person has recieved. With this, we can update the people on the list to increase the chances of new entrants to be helped.</p>
 
-            <p>We’re working on a way to track who has been helped and who hasn’t, which will make it easier for us to know who to remove from the database. In the meantime, we encourage people who have been satisfactorily helped to reach out to us to remove their name from the database, and some people have responded favorably!</p>
-
-
-            <h2>What’s next for Angels Among Us?</h2>
-            <p>A lot! We’re swimming in feature requests for making it easier to pay multiple people at once, to be able to let people know who their donor is, etc. We’re taking it one day at a time (we’re just two days in at the time of this writing), so we can definitely do all these things.</p>
-
-            <p>And we will!</p>
             <h2>Wait - I have more questions!</h2>
 
-            <p><a href="mailto:thevunderkind@gmail.com">Email Justin.</a></p>
+            <p><a href="mailto:angelsamongusbot@gmail.com">Email Us.</a></p>
+
+            <TextCenter>
+                <p><a href="/">^Back home</a></p>
+            </TextCenter>
 
         </div>
     )

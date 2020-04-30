@@ -1,0 +1,68 @@
+.Donation {
+    margin: 20px auto;
+    width: 100%;
+    line-height: 1;
+
+}
+
+.featurebanner{
+    height: 100%;
+    background-color: #FFDDB5;
+    padding: 5px;
+    margin: 10px auto;
+    margin-bottom: 0;
+}
+
+#reset{
+    background-color: white;
+    padding-top:30px;
+}
+
+form{
+    background: #02C9FF;
+    border-radius: 5px;
+    padding: 20px;
+    background-image: radial-gradient(rgb(0, 0, 0) 2.5%, transparent 0);
+    background-size: 20px 20px;
+}
+
+
+
+.flex-justify-around {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-section {
+    margin-top: 20px;
+}
+
+.pay-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.abort-button {
+    margin-right: 10px;
+}
+
+.black {
+    background-color: #333333;
+    color: white;
+}
+
+.Input {
+    width: 80%;
+    border-radius: 10px;
+    border: 0.5px solid rgb(63, 63, 63);
+    height: 35px;
+    margin: 5px auto 5px;
+}
+
+.Button .Input {
+    text-align: center;
+}

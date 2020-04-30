@@ -33,7 +33,7 @@ function DonationTracker(props){
     // }
     function postDonation(){
         axios.put(
-            `https://good-faith.herokuapp.com/api/people/${props.user.id}`,
+            `${process.env.REACT_APP_ANGELSAPIBASE}/people/${props.user._id}`,
             { "donationAmount": donated.amount },
           )
           .then(res => console.log(res))

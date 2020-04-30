@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Roboto-Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap');
 :root {
-  --primary-font: 'Roboto Mono', monospace;
-  --secondary-font: 'Roboto Mono', monospace;
-  --primary-color: rgb(13, 73, 147);
-  --secondary-color:rgb(61, 114, 37);
+  --primary-font: 'Inter', sans-serif;
+  --secondary-font: 'Inter', sans-serif;
+  --primary-color: #ff4444;
+  --secondary-color:#fff;
   --accent-color: #000000;
   --primary-color-transparent: rgba(13, 73, 147, 0.81);
   --secondary-color-transparent: rgba(61, 114, 147, 0.81);
@@ -21,6 +21,9 @@ body {
   font-family: var(--secondary-font);
   margin: 0;
   scroll-behavior: smooth;
+  background: #fff;
+  background-image: radial-gradient(rgb(0, 0, 0) 2.5%, transparent 0);
+  background-size: 20px 20px;
 }
 
 p {

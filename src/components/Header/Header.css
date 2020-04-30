@@ -1,25 +1,52 @@
-.Linq {
+.HeaderLinks {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0 25px 40px;
     height: 40px;
     box-shadow: var(--shadow);
+    background: white;
 }
 
-.Linq a {
+.HeaderLinks-SubLinks {
+    height: 40px;
+    text-align: center;
+        padding: 10px 0 25px 40px;
+}
+
+.active {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.redden{
+    color: #ff4444;
+}
+
+.HeaderLinks a {
     text-decoration: none;
     border-bottom: none;
     padding: 5px;
     line-height: 40px;
 }
 
-.Linq a:hover {
+.HeaderLinks a:hover {
     background-color: transparent;
     color: initial;
     padding: 5px;
 }
 
-.Linq a.active {
-    border-bottom: 3px solid var(--primary-color);
+@media (max-width: 769px) {
+  .HeaderLinks {
+    flex-direction: column;
+    height: 100px !important;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .HeaderLinks-SubLinks {
+    height: 40px;
+    text-align: center;
+    padding: 0px;
+  }
 }
