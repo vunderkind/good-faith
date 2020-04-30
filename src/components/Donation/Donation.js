@@ -199,23 +199,25 @@ function Donation( props ) {
                     </label>
                     <br/>
                     {!isAnon ?
-                        <label className="donation-input-section">
-                            <p>Name</p>
-                            <input className="Input" 
-                            type='text' 
-                            name="donorName" 
-                            onChange={event => setdonorName(event.target.value)} 
-                            placeholder="Your name"></input>
+                        <div>
+                            <label className="donation-input-section">
+                                <p>Name</p>
+                                <input className="Input" 
+                                type='text' 
+                                name="donorName" 
+                                onChange={event => setdonorName(event.target.value)} 
+                                placeholder="Your name"></input>
+                            </label>
 
-                            <p>Email address</p>
-                            <input type="email"
-                            pattern="[^ @]*@[^ @]*"
-                            name="donorEmail"
-                            placeholder="Your email address"
-                            onChange={event => setDonorEmail(event.target.value)} className="Input"></input>
-                            
-                            
-                        </label>
+                            <label className="donation-input-section">
+                                <p>Email address</p>
+                                <input type="email"
+                                pattern="[^ @]*@[^ @]*"
+                                name="donorEmail"
+                                placeholder="Your email address"
+                                onChange={event => setDonorEmail(event.target.value)} className="Input"></input>
+                            </label>
+                        </div>
                     : null
                     }
 
