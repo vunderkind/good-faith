@@ -46,7 +46,7 @@ function Home() {
           <Fragment>
             <TextCenter>
               <p>A list of people who have been economically affected by the COVID-19 virus and are currently without pay.</p>
-              <p className="accent-text">Here are <span>three</span> randomly-generated individuals who you can help.<br /> If you'd like to donate to more people after your first three, refresh the page.</p>
+              <p className="accent-text">Here are <span>three</span> randomly-selected individuals who you can help.<br /> If you'd like to donate to more people after your first three, refresh the page.</p>
             </TextCenter>
 
             {users ?
